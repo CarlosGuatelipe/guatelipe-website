@@ -241,7 +241,7 @@ document.getElementById("phone").addEventListener("input", event => {
 });
 
 const EMAILJS_CONFIG = {
-  serviceId: "service_8qyq2ika",
+  serviceId: "service_xjw1nc7",
   templateId: "template_38mbssi",
   publicKey: "eKhjPpH3lmR3aTJ1u",
   recipientEmail: "guatelipe.dev@gmail.com"
