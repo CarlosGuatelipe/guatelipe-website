@@ -171,11 +171,6 @@ const submitBtn = document.getElementById("submitBtn");
 const progressBar = document.getElementById("progressBar");
 const stepNumber = document.getElementById("stepNumber");
 const formMessage = document.getElementById("formMessage");
-const money = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-  maximumFractionDigits: 0
-});
 let currentStep = 1;
 
 function getProject() {
@@ -183,29 +178,7 @@ function getProject() {
 }
 
 function calculateEstimate() {
-  const project = getProject();
-  const output = document.getElementById("estimateValue");
-
-  if (!project) {
-    output.textContent = "Selecione um projeto";
-    return null;
-  }
-
-  let total = Number(project.dataset.base || 0);
-  const pages = document.getElementById("pages");
-  const deadline = document.getElementById("deadline");
-
-  total += Number(pages.options[pages.selectedIndex].dataset.add || 0);
-
-  document.querySelectorAll(".extras-grid input:checked").forEach(item => {
-    total += Number(item.dataset.add || 0);
-  });
-
-  total *= Number(deadline.options[deadline.selectedIndex].dataset.mult || 1);
-  total = Math.round(total / 50) * 50;
-
-  output.textContent = `A partir de ${money.format(total)}`;
-  return total;
+  return null;
 }
 
 function updateProjectCards() {
@@ -270,8 +243,13 @@ document.getElementById("phone").addEventListener("input", event => {
 const EMAILJS_CONFIG = {
   serviceId: "service_8qyq2ika",
   templateId: "template_38mbssi",
-  publicKey: "eKhjPpH3lmR3aTJ1u"
+  publicKey: "eKhjPpH3lmR3aTJ1u",
+  recipientEmail: "guatelipe.dev@gmail.com"
 };
+
+if (typeof emailjs !== "undefined") {
+  emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+}
 
 form.addEventListener("submit", async event => {
   event.preventDefault();
@@ -300,9 +278,9 @@ form.addEventListener("submit", async event => {
     ...document.querySelectorAll(".extras-grid input:checked")
   ].map(item => item.value);
 
-  const total = calculateEstimate();
 
   const templateParams = {
+    to_email: EMAILJS_CONFIG.recipientEmail,
     from_name: document.getElementById("name").value.trim(),
     company: document.getElementById("company").value.trim() || "Não informado",
     client_email: clientEmail,
@@ -311,7 +289,6 @@ form.addEventListener("submit", async event => {
     pages: document.getElementById("pages").value,
     deadline: document.getElementById("deadline").value,
     extras: extras.length ? extras.join(", ") : "Nenhuma selecionada",
-    estimate: money.format(total),
     description: document.getElementById("description").value.trim()
   };
 
@@ -330,10 +307,7 @@ form.addEventListener("submit", async event => {
     await emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.templateId,
-      templateParams,
-      {
-        publicKey: EMAILJS_CONFIG.publicKey
-      }
+      templateParams
     );
 
     formMessage.className = "form-message success";
@@ -354,8 +328,9 @@ form.addEventListener("submit", async event => {
     console.error("Erro ao enviar pelo EmailJS:", error);
 
     formMessage.className = "form-message error";
+    const detail = error?.text || error?.message || "erro desconhecido";
     formMessage.textContent =
-      "Não foi possível enviar agora. Confira a configuração do EmailJS e tente novamente.";
+      `Não foi possível enviar: ${detail}. Abra o console (F12) para verificar.`;
   } finally {
     submitBtn.classList.remove("is-loading");
     submitBtn.disabled = false;
