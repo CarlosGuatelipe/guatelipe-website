@@ -163,3 +163,58 @@ button{cursor:pointer}
   to { transform: rotate(360deg); }
 }
 
+
+/* ========================================
+   ACESSIBILIDADE (skip link + foco visível)
+======================================== */
+.skip-link{position:fixed;top:12px;left:12px;z-index:100000;padding:12px 18px;background:var(--blue);color:#fff;border-radius:10px;font-size:12px;font-weight:800;transform:translateY(-160%);transition:transform .2s ease}
+.skip-link:focus{transform:translateY(0);outline:2px solid #fff;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.menu a:focus-visible{outline-offset:6px}
+
+/* ========================================
+   GARANTIAS / O QUE ESPERAR
+======================================== */
+.testimonials{background:linear-gradient(180deg,#05101c,#02050b)}
+.guarantee-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.guarantee-card{--mx:50%;--my:50%;position:relative;padding:30px 26px;background:linear-gradient(145deg,rgba(13,22,35,.85),rgba(6,10,17,.86));border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;transition:.35s}
+.guarantee-card:before{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx) var(--my),rgba(40,139,255,.14),transparent 45%);opacity:0;transition:.25s}
+.guarantee-card:hover:before{opacity:1}
+.guarantee-card:hover{transform:translateY(-8px);border-color:rgba(64,151,255,.45);box-shadow:0 25px 55px rgba(0,0,0,.3)}
+.guarantee-card b{width:52px;height:52px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(20,121,255,.08);color:#5eb1ff;font-size:22px;position:relative}
+.guarantee-card h3{margin:22px 0 10px;font:700 17px Montserrat;position:relative}
+.guarantee-card p{color:var(--muted);font-size:13px;line-height:1.7;position:relative}
+
+/* ========================================
+   FAQ
+======================================== */
+.faq{background:linear-gradient(180deg,#02050b,#071426)}
+.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faq-intro h2{font:800 clamp(30px,3.4vw,46px)/1.1 Montserrat;letter-spacing:-.035em;margin-top:8px}
+.faq-intro>p:not(.eyebrow){margin-top:20px;color:var(--muted);font-size:14px;line-height:1.75}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;transition:border-color .25s,background .25s}
+.faq-item[open]{border-color:rgba(64,151,255,.4);background:rgba(20,121,255,.05)}
+.faq-item summary{list-style:none;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;color:#eef3f9;font:700 15px Montserrat;transition:color .2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:#69b8ff}
+.faq-item summary:after{content:"+";flex:none;width:26px;height:26px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:50%;color:#5eb1ff;font-size:18px;font-weight:400;transition:transform .25s}
+.faq-item[open] summary:after{content:"−";transform:rotate(180deg)}
+.faq-answer{padding:0 22px 22px}
+.faq-answer p{color:var(--muted);font-size:14px;line-height:1.75}
+
+/* ========================================
+   RODAPÉ (links) + WHATSAPP FLUTUANTE
+======================================== */
+.footer-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer-links a{color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:color .2s}
+.footer-links a:hover{color:#69b8ff}
+
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:9000;width:58px;height:58px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#25d366,#1da851);border-radius:50%;box-shadow:0 12px 30px rgba(37,211,102,.35);transition:transform .25s,box-shadow .25s;animation:waPulse 2.6s ease-in-out infinite}
+.whatsapp-float:hover{transform:scale(1.08);box-shadow:0 16px 40px rgba(37,211,102,.5)}
+@keyframes waPulse{0%,100%{box-shadow:0 12px 30px rgba(37,211,102,.35)}50%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 12px rgba(37,211,102,.08)}}
+
+@media(max-width:1080px){.guarantee-grid{grid-template-columns:1fr 1fr}.faq-layout{grid-template-columns:1fr;gap:34px}}
+@media(max-width:760px){.guarantee-grid{grid-template-columns:1fr}.whatsapp-float{width:52px;height:52px;right:16px;bottom:16px}}
+@media(prefers-reduced-motion:reduce){.whatsapp-float{animation:none}.skip-link{transition:none}}
+

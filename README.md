@@ -23,8 +23,12 @@ guatelipe_site_refinado/
 - Cards mais orgânicos e arredondados
 - Transições ao rolar a página
 - Menu responsivo
-- Portfólio, serviços, processo, sobre e contato
-- Formulário com envio pelo WhatsApp
+- Portfólio, serviços, processo, sobre, FAQ e contato
+- Seção de garantias ("O que esperar") e FAQ com accordion
+- Formulário multi-etapa com envio por e-mail (EmailJS)
+- SEO: dados estruturados (JSON-LD), Open Graph e Twitter cards
+- Acessibilidade: link "pular para o conteúdo", foco visível e respeito a "reduzir movimento"
+- Botão flutuante de WhatsApp
 
 ## Como abrir
 
@@ -35,25 +39,19 @@ guatelipe_site_refinado/
 
 ## Configurar o WhatsApp
 
-Abra:
+O botão flutuante fica escondido até você configurar o número.
+
+Abra `index.html`, procure `55DDDNUMERO` no link do WhatsApp e troque pelo seu número no formato `55 + DDD + número` (somente números). Exemplo:
 
 ```text
-js/script.js
+https://wa.me/5531999999999?text=...
 ```
 
-Procure:
+Assim que o `55DDDNUMERO` for substituído, o botão aparece automaticamente.
 
-```js
-const whatsappNumber = "5531999999999";
-```
+## Configurar o e-mail (EmailJS)
 
-Troque por:
-
-```text
-55 + DDD + número
-```
-
-Use somente números.
+O formulário de orçamento envia por e-mail via EmailJS. As credenciais ficam em `js/script.js`, no objeto `EMAILJS_CONFIG` (`serviceId`, `templateId`, `publicKey` e `recipientEmail`).
 
 
 ## Animações adicionadas ao fundo

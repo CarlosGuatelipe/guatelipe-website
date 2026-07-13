@@ -1,3 +1,6 @@
+const prefersReducedMotion =
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 const header = document.getElementById("header");
 const menu = document.querySelector(".menu");
 const menuToggle = document.querySelector(".menu-toggle");
@@ -22,16 +25,34 @@ document.querySelectorAll(".menu a").forEach(link => {
   link.addEventListener("click", closeMenu);
 });
 
+let scrollScheduled = false;
 window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 20);
-});
+  if (scrollScheduled) return;
+  scrollScheduled = true;
+  requestAnimationFrame(() => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+    scrollScheduled = false;
+  });
+}, { passive: true });
 
-window.addEventListener("mousemove", event => {
-  if (cursorLight) {
-    cursorLight.style.left = `${event.clientX}px`;
-    cursorLight.style.top = `${event.clientY}px`;
-  }
-});
+if (cursorLight && !prefersReducedMotion) {
+  let cursorScheduled = false;
+  let cursorX = 0;
+  let cursorY = 0;
+  window.addEventListener("mousemove", event => {
+    cursorX = event.clientX;
+    cursorY = event.clientY;
+    if (cursorScheduled) return;
+    cursorScheduled = true;
+    requestAnimationFrame(() => {
+      cursorLight.style.left = `${cursorX}px`;
+      cursorLight.style.top = `${cursorY}px`;
+      cursorScheduled = false;
+    });
+  }, { passive: true });
+} else if (cursorLight) {
+  cursorLight.style.display = "none";
+}
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -61,7 +82,7 @@ function createParticles() {
     container.appendChild(particle);
   }
 }
-createParticles();
+if (!prefersReducedMotion) createParticles();
 
 if (laptop) {
   laptop.addEventListener("mousemove", event => {
@@ -80,7 +101,7 @@ if (laptop) {
 
 document.querySelectorAll(".magnetic").forEach(button => {
   button.addEventListener("mousemove", event => {
-    if (window.innerWidth < 761) return;
+    if (window.innerWidth < 761 || prefersReducedMotion) return;
     const rect = button.getBoundingClientRect();
     const x = event.clientX - rect.left - rect.width / 2;
     const y = event.clientY - rect.top - rect.height / 2;
@@ -99,7 +120,7 @@ document.querySelectorAll(".glow-card").forEach(card => {
 
 document.querySelectorAll(".tilt-card").forEach(card => {
   card.addEventListener("mousemove", event => {
-    if (window.innerWidth < 761) return;
+    if (window.innerWidth < 761 || prefersReducedMotion) return;
     const rect = card.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
@@ -140,7 +161,13 @@ function typeCode() {
   typedLine += 1;
   setTimeout(typeCode, typedLine < 4 ? 190 : 115);
 }
-setTimeout(typeCode, 700);
+if (typingCode) {
+  if (prefersReducedMotion) {
+    typingCode.innerHTML = codeLines.join("\n");
+  } else {
+    setTimeout(typeCode, 700);
+  }
+}
 
 const counterObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -177,10 +204,6 @@ function getProject() {
   return document.querySelector('input[name="projectType"]:checked');
 }
 
-function calculateEstimate() {
-  return null;
-}
-
 function updateProjectCards() {
   document.querySelectorAll(".project-options label").forEach(label => {
     const input = label.querySelector("input");
@@ -199,7 +222,6 @@ function showStep(step) {
   nextBtn.style.display = step === 4 ? "none" : "inline-flex";
   submitBtn.style.display = step === 4 ? "inline-flex" : "none";
   formMessage.textContent = "";
-  calculateEstimate();
 }
 
 function validateStep(step) {
@@ -229,7 +251,6 @@ backBtn.addEventListener("click", () => showStep(currentStep - 1));
 
 form.addEventListener("change", () => {
   updateProjectCards();
-  calculateEstimate();
 });
 
 document.getElementById("phone").addEventListener("input", event => {
@@ -316,7 +337,6 @@ form.addEventListener("submit", async event => {
 
     form.reset();
     updateProjectCards();
-    calculateEstimate();
 
     setTimeout(() => {
       showStep(1);
@@ -339,4 +359,10 @@ form.addEventListener("submit", async event => {
 });
 
 showStep(1);
+
+// Esconde o botão do WhatsApp enquanto o número não estiver configurado.
+const whatsappFloat = document.getElementById("whatsappFloat");
+if (whatsappFloat && whatsappFloat.getAttribute("href").includes("DDDNUMERO")) {
+  whatsappFloat.style.display = "none";
+}
 
