@@ -165,6 +165,18 @@ button{cursor:pointer}
 
 
 /* ========================================
+   CARD SEVERE CORP (projeto real — monocromático)
+======================================== */
+.project-severe{background:radial-gradient(circle at 50% 32%,#1a1a1a,#050505 70%)}
+.project-severe .project-center{gap:18px;padding:0 26px}
+.project-severe .project-center small{color:#9a9a9c;letter-spacing:.24em;font-size:9px}
+.project-severe .project-center strong.severe-title{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:25px;letter-spacing:-.005em;line-height:1.12;text-transform:none}
+.project-large .project-severe .project-center strong.severe-title{font-size:33px}
+.project-severe .project-center strong.severe-title span{display:block;margin-top:4px;color:#8b8b8e;font-weight:400}
+.project-severe .project-center p{color:#7d7d80;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+
+
+/* ========================================
    ACESSIBILIDADE (skip link + foco visível)
 ======================================== */
 .skip-link{position:fixed;top:12px;left:12px;z-index:100000;padding:12px 18px;background:var(--blue);color:#fff;border-radius:10px;font-size:12px;font-weight:800;transform:translateY(-160%);transition:transform .2s ease}
