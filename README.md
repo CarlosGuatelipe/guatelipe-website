@@ -44,5 +44,4 @@ guatelipe_site_refinado/
 - Cards flutuantes com movimento leve
 - Luz do mouse com pequeno atraso
 
-O layout e o conteúdo original não foram alterados.
 
