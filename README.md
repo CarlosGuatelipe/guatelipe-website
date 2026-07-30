@@ -30,28 +30,6 @@ guatelipe_site_refinado/
 - Acessibilidade: link "pular para o conteúdo", foco visível e respeito a "reduzir movimento"
 - Botão flutuante de WhatsApp
 
-## Como abrir
-
-1. Extraia o ZIP.
-2. Abra a pasta no VS Code.
-3. Abra `index.html`.
-4. Use o Live Server ou abra diretamente no navegador.
-
-## Configurar o WhatsApp
-
-O botão flutuante fica escondido até você configurar o número.
-
-Abra `index.html`, procure `55DDDNUMERO` no link do WhatsApp e troque pelo seu número no formato `55 + DDD + número` (somente números). Exemplo:
-
-```text
-https://wa.me/5531999999999?text=...
-```
-
-Assim que o `55DDDNUMERO` for substituído, o botão aparece automaticamente.
-
-## Configurar o e-mail (EmailJS)
-
-O formulário de orçamento envia por e-mail via EmailJS. As credenciais ficam em `js/script.js`, no objeto `EMAILJS_CONFIG` (`serviceId`, `templateId`, `publicKey` e `recipientEmail`).
 
 
 ## Animações adicionadas ao fundo
