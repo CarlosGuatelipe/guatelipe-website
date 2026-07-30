@@ -1,17 +1,3 @@
-# Guatelipe — Site Refinado
-
-Estrutura mínima:
-
-```text
-guatelipe_site_refinado/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── images/
-└── README.md
-```
 
 ## Melhorias desta versão
 
