@@ -22,7 +22,7 @@ python -m http.server
 index.html          página única
 404.html            página de erro
 css/style.css       sistema visual completo
-js/script.js        rolagem, revelações, formulário
+js/script.js        rolagem, revelações, índice lateral
 images/             marca em SVG, retrato, capturas de projeto
 netlify.toml        cabeçalhos, cache e redirecionamentos
 robots.txt          · sitemap.xml · site.webmanifest
@@ -63,21 +63,21 @@ cabeçalhos de segurança, política de cache e o redirecionamento de `www`.
 Cache de CSS e JS é curto de propósito: os arquivos não têm hash no nome, então
 cache longo prenderia o visitante numa versão antiga a cada correção.
 
-## Segurança do formulário
+## Contato
 
-As chaves do EmailJS ficam visíveis no `js/script.js` — é assim que a
-biblioteca funciona: ela roda no navegador. O código aplica três barreiras
-(origem permitida, limite de três envios por hora e tempo mínimo de
-preenchimento), mas todas são contornáveis por quem abrir o console.
+Não há formulário. O contato é direto por WhatsApp, e-mail ou LinkedIn.
 
-**A proteção que vale está no painel do EmailJS**, em Account → Security →
-Allowed Origins. Sem ela, qualquer pessoa com as chaves pode chamar a API
-direto e gastar a cota da conta.
+A decisão foi deliberada: o formulário dependia do EmailJS, cuja cota
+gratuita é de 200 envios por mês. Estourada a cota, o formulário falha em
+silêncio — e um canal de contato que quebra sozinho é pior que canal nenhum.
+Sem serviço externo, não há cota, chave pública exposta nem ponto de falha.
+
+O link do e-mail já vai com assunto e corpo preenchidos, para a pessoa só
+completar.
 
 ## Pendências
 
 - [ ] Ligar o Cloudflare Web Analytics (snippet comentado no `<head>`)
-- [ ] **Restringir Allowed Origins no painel do EmailJS**
 - [ ] Enviar o `sitemap.xml` ao Google Search Console
 - [ ] Registrar `guatelipe.dev` e trocar os endereços canônicos
 - [ ] Segundo projeto real no portfólio

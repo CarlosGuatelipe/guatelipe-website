@@ -83,7 +83,7 @@ table{border-collapse:collapse;width:100%}
 }
 
 /* Rótulo monoespaçado — a unidade de informação técnica do layout. */
-.section-kicker,.form-kicker,.footer-label,.plate-meta,.hero-masthead,
+.section-kicker,.footer-label,.plate-meta,.hero-masthead,
 .colophon-title,.ticker-track,.menu i,.nav-status,.cta-kicker{
   font-family:var(--mono);
   font-weight:500;
@@ -1381,7 +1381,7 @@ a.project-plate{display:flex;text-decoration:none}
    ========================================================================== */
 .quote-layout{
   display:grid;
-  grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  grid-template-columns:minmax(0,1fr) minmax(0,.9fr);
   gap:clamp(28px,5vw,76px);
   align-items:start;
 }
@@ -1402,139 +1402,19 @@ a.project-plate{display:flex;text-decoration:none}
 }
 .quote-checks li:before{content:"✓";color:var(--accent);font-family:var(--mono);font-size:13px}
 
-.quote-direct{margin-top:28px;padding-top:18px;border-top:1px solid var(--rule-i)}
-.quote-direct a{
-  display:block;
-  padding:7px 0;
-  font-size:14px;
-  color:var(--paper-soft);
-  transition:color .2s var(--ease);
-}
-.quote-direct a:hover{color:var(--accent)}
-.quote-note{
-  margin-top:22px;
-  font-family:var(--mono);
-  font-size:10px;
-  line-height:1.6;
-  letter-spacing:.04em;
-  color:var(--paper-mute);
-}
-
-.quote-form{padding:clamp(24px,3vw,40px);border:1px solid var(--rule-i);border-radius:var(--r-lg)}
 
 
-.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
-.form-grid label,.message-field{display:flex;flex-direction:column;gap:8px}
-.form-grid label > span,.message-field > span,.extras-title{
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--paper-mute);
-}
 
 
-/* ---------------------------------------------- FORMULÁRIO EM UMA TELA */
-.quote-form h3{
-  margin:10px 0 clamp(22px,2.6vw,30px);
-  font-family:var(--display);
-  font-weight:800;
-  font-size:clamp(20px,2.4vw,30px);
-  letter-spacing:-.03em;
-}
+
 
 /* Etiquetas de tipo de projeto: um clique, sem obrigação. */
-.chips{border:0;margin:clamp(20px,2.6vw,28px) 0}
-.chips legend{
-  padding:0;
-  margin-bottom:12px;
-  font-family:var(--mono);
-  font-size:10px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--paper-mute);
-}
-.chips legend i{font-style:normal;opacity:.6;text-transform:none;letter-spacing:.04em}
-.chips-row{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{
-  position:relative;
-  padding:9px 15px;
-  border:1px solid var(--rule-i);
-  border-radius:999px;
-  font-size:12.5px;
-  cursor:pointer;
-  transition:background .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease);
-}
-.chips input{position:absolute;opacity:0;pointer-events:none}
-.chips label:hover{border-color:var(--paper)}
-.chips label.selected{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-.chips input:focus-visible + span{outline:2px solid var(--paper);outline-offset:4px}
-
-/* O e-mail é secundário: fica recolhido para não somar campo à primeira vista. */
-.form-extra{margin-top:clamp(18px,2.2vw,24px);border-top:1px solid var(--rule-i);padding-top:16px}
-.form-extra summary{
-  list-style:none;
-  cursor:pointer;
-  font-family:var(--mono);
-  font-size:10.5px;
-  letter-spacing:.06em;
-  color:var(--paper-mute);
-  transition:color .2s var(--ease);
-}
-.form-extra summary::-webkit-details-marker{display:none}
-.form-extra summary:before{content:"+ ";color:var(--accent)}
-.form-extra[open] summary:before{content:"− "}
-.form-extra summary:hover{color:var(--paper)}
-.form-extra label{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-
-.form-actions{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-top:clamp(24px,3vw,32px);
-  padding-top:22px;
-  border-top:1px solid var(--rule-i);
-}
-.form-wa{
-  font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:.04em;
-  color:var(--paper-mute);
-  border-bottom:1px solid transparent;
-  transition:color .2s var(--ease),border-color .2s var(--ease);
-}
-.form-wa:hover{color:var(--accent);border-bottom-color:var(--accent)}
-
-/* Campos como linhas de um formulário impresso: só o fio de base. */
-.form-grid input,.form-grid select,.message-field textarea{
-  width:100%;
-  padding:11px 2px;
-  background:transparent;
-  border:0;
-  border-bottom:1px solid var(--rule-i);
-  color:var(--paper);
-  font-size:15px;
-  outline:none;
-  transition:border-color .22s var(--ease);
-}
-.form-grid select{cursor:pointer}
-.form-grid select option{background:var(--ink);color:var(--paper)}
-.form-grid input::placeholder,.message-field textarea::placeholder{color:rgba(251,250,247,.28)}
-.form-grid input:focus,.form-grid select:focus,.message-field textarea:focus{border-bottom-color:var(--accent)}
-.message-field textarea{resize:vertical;border:1px solid var(--rule-i);border-radius:var(--r-sm);padding:14px}
-.form-grid input.invalid,.message-field textarea.invalid{border-color:var(--accent)}
 
 
 
-.form-actions{
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  margin-top:clamp(26px,3vw,36px);
-  padding-top:22px;
-  border-top:1px solid var(--rule-i);
-}
+
+
+
 
 /* Botões dentro do bloco de tinta invertem a lógica de cor. */
 .inverted .btn-primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
@@ -1542,29 +1422,65 @@ a.project-plate{display:flex;text-decoration:none}
 .inverted .btn-ghost{border-color:rgba(251,250,247,.45);color:var(--paper)}
 .inverted .btn-ghost:hover{border-color:var(--paper);box-shadow:6px 6px 0 var(--paper)}
 
-.form-message{
-  min-height:16px;
-  margin-top:14px;
-  font-family:var(--mono);
-  font-size:11px;
-  letter-spacing:.04em;
+
+
+
+
+
+/* ---------------------------------------------- CARTÃO DE CONTATO DIRETO */
+.contato-cartao{
+  padding:clamp(24px,3vw,38px);
+  border:1px solid var(--rule-i);
+  border-radius:var(--r-lg);
 }
-.form-message.error{color:#FF9B85}
-.form-message.success{color:#93DCAC}
+.contato-cartao .colophon-title{margin-bottom:18px}
 
-.submit-btn.is-loading{cursor:wait;opacity:.75;pointer-events:none}
-.submit-btn.is-loading:before{
-  content:"";
-  width:12px;height:12px;
-  border:2px solid currentColor;
-  border-top-color:transparent;
-  border-radius:50%;
-  animation:emailSpinner .7s linear infinite;
+/* O WhatsApp é o caminho principal: ganha bloco próprio e peso visual. */
+.contato-principal{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:20px;
+  margin-bottom:10px;
+  background:var(--paper);
+  color:var(--ink);
+  border-radius:var(--r-md);
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease),background .28s var(--ease);
 }
-@keyframes emailSpinner{to{transform:rotate(360deg)}}
+.contato-icone{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--paper)}
+.contato-texto{display:flex;flex-direction:column;gap:3px;min-width:0}
+.contato-texto strong{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.contato-texto small{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink-mute)}
+.contato-seta{margin-left:auto;font-size:18px;transition:transform .28s var(--ease)}
+.contato-principal:hover{background:var(--accent);color:var(--paper);transform:translate(-4px,-4px);box-shadow:8px 8px 0 var(--paper)}
+.contato-principal:hover .contato-icone{background:var(--paper);color:var(--accent)}
+.contato-principal:hover .contato-texto small{color:var(--paper-soft)}
+.contato-principal:hover .contato-seta{transform:translate(4px,-4px)}
 
-.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.contato-linha{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  padding:16px 4px;
+  border-bottom:1px solid var(--rule-i);
+  transition:color .22s var(--ease),padding-left .28s var(--ease);
+}
+.contato-linha strong{font-family:var(--display);font-weight:700;font-size:14px;flex:none}
+.contato-linha small{font-family:var(--mono);font-size:11px;color:var(--paper-mute);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.contato-linha:hover{color:var(--accent);padding-left:8px}
+.contato-linha:hover small{color:var(--accent)}
 
+.contato-nota{
+  margin-top:22px;
+  font-size:13.5px;
+  line-height:1.7;
+  color:var(--paper-soft);
+}
+
+@media(max-width:560px){
+  .contato-principal{padding:16px;gap:12px}
+  .contato-linha small{display:none}
+}
 
 /* ==========================================================================
    ÚLTIMA CHAMADA
@@ -1966,9 +1882,6 @@ textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);out
   .standards-grid,.process-grid,.pledge-grid,.footer-cols{grid-template-columns:1fr}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{width:100%}
-  .form-actions{flex-direction:column;align-items:stretch}
-  .form-actions .btn{width:100%}
-  .form-wa{text-align:center}
   .colophon dl > div{grid-template-columns:1fr;gap:4px}
   .project-info{flex-direction:column;align-items:flex-start;gap:12px}
   .service-item summary{grid-template-columns:auto minmax(0,1fr) auto;gap:14px}
@@ -1994,7 +1907,7 @@ textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);out
    ========================================================================== */
 @media print{
   .header,.rail,.back-to-top,.paper-grain,.plate-cursor,
-  .ticker,.quote-form,.wa-float,.toast-notification{display:none!important}
+  .ticker,.wa-float,.toast-notification{display:none!important}
   body{background:#fff;color:#000}
   .section,.section.inverted,.pullquote,.footer,.cta-band,.standards{
     background:#fff;color:#000;padding:22px 0;break-inside:avoid;
