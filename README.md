@@ -55,6 +55,8 @@ No topo do `css/style.css`:
 
 ## Publicação
 
+No ar em **https://guatelipe.netlify.app**
+
 O deploy é feito no Netlify a partir desta pasta. O `netlify.toml` já define
 cabeçalhos de segurança, política de cache e o redirecionamento de `www`.
 
@@ -77,6 +79,7 @@ direto e gastar a cota da conta.
 - [ ] Ligar o Cloudflare Web Analytics (snippet comentado no `<head>`)
 - [ ] **Restringir Allowed Origins no painel do EmailJS**
 - [ ] Enviar o `sitemap.xml` ao Google Search Console
+- [ ] Registrar `guatelipe.dev` e trocar os endereços canônicos
 - [ ] Segundo projeto real no portfólio
 - [ ] Depoimento de cliente
 

@@ -49,8 +49,13 @@
 # Endereço único: sem "www" e sem barra final duplicada.
 # Evita que o Google indexe a mesma página em dois endereços.
 # ------------------------------------------------------------------------------
-[[redirects]]
-  from = "https://www.guatelipe.dev/*"
-  to = "https://guatelipe.dev/:splat"
-  status = 301
-  force = true
+# Enquanto o domínio próprio não existe, o endereço canônico é o do Netlify.
+# Quando guatelipe.dev entrar no ar, troque as duas linhas abaixo e reative
+# o redirecionamento de www — e lembre de atualizar canonical, og:url,
+# sitemap.xml, robots.txt e a allowlist do EmailJS junto.
+#
+# [[redirects]]
+#   from = "https://www.guatelipe.dev/*"
+#   to = "https://guatelipe.dev/:splat"
+#   status = 301
+#   force = true

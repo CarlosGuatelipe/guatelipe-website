@@ -369,6 +369,7 @@ const EMAILJS_CONFIG = {
 // Endereços de onde o formulário aceita funcionar. Se alguém copiar os
 // arquivos e hospedar em outro lugar, o envio não acontece.
 const ORIGENS_PERMITIDAS = [
+  "guatelipe.netlify.app",
   "guatelipe.dev",
   "www.guatelipe.dev",
   "localhost",
