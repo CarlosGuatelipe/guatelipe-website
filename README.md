@@ -61,10 +61,21 @@ cabeçalhos de segurança, política de cache e o redirecionamento de `www`.
 Cache de CSS e JS é curto de propósito: os arquivos não têm hash no nome, então
 cache longo prenderia o visitante numa versão antiga a cada correção.
 
+## Segurança do formulário
+
+As chaves do EmailJS ficam visíveis no `js/script.js` — é assim que a
+biblioteca funciona: ela roda no navegador. O código aplica três barreiras
+(origem permitida, limite de três envios por hora e tempo mínimo de
+preenchimento), mas todas são contornáveis por quem abrir o console.
+
+**A proteção que vale está no painel do EmailJS**, em Account → Security →
+Allowed Origins. Sem ela, qualquer pessoa com as chaves pode chamar a API
+direto e gastar a cota da conta.
+
 ## Pendências
 
 - [ ] Ligar o Cloudflare Web Analytics (snippet comentado no `<head>`)
-- [ ] Restringir o domínio no painel do EmailJS
+- [ ] **Restringir Allowed Origins no painel do EmailJS**
 - [ ] Enviar o `sitemap.xml` ao Google Search Console
 - [ ] Segundo projeto real no portfólio
 - [ ] Depoimento de cliente

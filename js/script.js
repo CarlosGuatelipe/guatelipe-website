@@ -349,12 +349,62 @@ document.getElementById("phone").addEventListener("input", event => {
   event.target.value = value;
 });
 
+/* ==========================================================================
+   ENVIO — CONTENÇÃO DE ABUSO
+
+   Estas chaves são públicas por natureza: rodam no navegador, então qualquer
+   pessoa consegue lê-las. As barreiras abaixo encarecem o abuso, mas NENHUMA
+   delas é intransponível — quem controla o navegador controla o JavaScript.
+
+   A proteção que de fato vale está no painel do EmailJS (Allowed Origins).
+   Sem ela, nada aqui impede alguém de chamar a API direto.
+   ========================================================================== */
 const EMAILJS_CONFIG = {
   serviceId: "service_xjw1nc7",
   templateId: "template_38mbssi",
   publicKey: "eKhjPpH3lmR3aTJ1u",
   recipientEmail: "guatelipe.dev@gmail.com"
 };
+
+// Endereços de onde o formulário aceita funcionar. Se alguém copiar os
+// arquivos e hospedar em outro lugar, o envio não acontece.
+const ORIGENS_PERMITIDAS = [
+  "guatelipe.dev",
+  "www.guatelipe.dev",
+  "localhost",
+  "127.0.0.1"
+];
+
+function origemPermitida() {
+  const host = window.location.hostname;
+  if (!host) return true;                        // aberto como arquivo local
+  if (ORIGENS_PERMITIDAS.includes(host)) return true;
+  return host.endsWith(".netlify.app");          // prévias do Netlify
+}
+
+// Limite por navegador: três envios por hora. Não impede um ataque real,
+// mas corta o envio repetido acidental e o robô ingênuo.
+const LIMITE_CHAVE = "guatelipe_envios";
+const LIMITE_MAXIMO = 3;
+const LIMITE_JANELA = 60 * 60 * 1000;
+
+function dentroDoLimite() {
+  try {
+    const agora = Date.now();
+    const registros = JSON.parse(localStorage.getItem(LIMITE_CHAVE) || "[]")
+      .filter(t => agora - t < LIMITE_JANELA);
+    if (registros.length >= LIMITE_MAXIMO) return false;
+    registros.push(agora);
+    localStorage.setItem(LIMITE_CHAVE, JSON.stringify(registros));
+    return true;
+  } catch (error) {
+    return true;   // localStorage bloqueado: não é motivo para barrar alguém
+  }
+}
+
+// Robô preenche e envia em menos de um segundo; pessoa não.
+const abertoEm = Date.now();
+const TEMPO_MINIMO = 4000;
 
 if (typeof emailjs !== "undefined") {
   emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
@@ -369,12 +419,34 @@ form.addEventListener("submit", async event => {
   // Campo isca: só um robô preenche um input escondido.
   const honeypot = document.getElementById("website");
   if (honeypot && honeypot.value.trim() !== "") {
+    // Resposta de sucesso de propósito: um robô que recebe erro tenta de novo.
     formMessage.className = "form-message success";
     formMessage.textContent = "Solicitação enviada. Entrarei em contato em breve.";
     return;
   }
 
+  // Preenchido rápido demais para ser pessoa.
+  if (Date.now() - abertoEm < TEMPO_MINIMO) {
+    formMessage.className = "form-message success";
+    formMessage.textContent = "Solicitação enviada. Entrarei em contato em breve.";
+    return;
+  }
+
+  if (!origemPermitida()) {
+    formMessage.className = "form-message error";
+    formMessage.textContent =
+      "Este formulário só funciona em guatelipe.dev. Me chame no WhatsApp (31) 99919-1545.";
+    return;
+  }
+
   if (!validarForm()) return;
+
+  if (!dentroDoLimite()) {
+    formMessage.className = "form-message error";
+    formMessage.textContent =
+      "Você já enviou algumas solicitações. Me chame no WhatsApp (31) 99919-1545 que eu respondo na hora.";
+    return;
+  }
 
   const clientEmail = document.getElementById("clientEmail").value.trim();
   const project = getProject();
