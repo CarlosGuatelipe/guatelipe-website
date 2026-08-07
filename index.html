@@ -5,26 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Guatelipe | Desenvolvimento Web — Sites, Landing Pages e Lojas</title>
-  <meta name="description" content="Desenvolvedor web freelancer. Crio sites modernos, responsivos e orientados a resultados: sites institucionais, landing pages, lojas virtuais e sistemas. Solicite um orçamento sem compromisso.">
+  <meta name="description" content="Desenvolvedor web em Belo Horizonte. Faço sites institucionais, landing pages, lojas virtuais e sistemas — escritos à mão, linha por linha, sem tema pronto. Chame no WhatsApp e peça um orçamento.">
   <meta name="author" content="Carlos Guatelipe">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#02050b">
+  <meta name="theme-color" content="#F1EDE4">
   <link rel="canonical" href="https://guatelipe.dev/">
 
   <meta property="og:title" content="Guatelipe | Desenvolvimento Web">
-  <meta property="og:description" content="Transformo ideias em experiências digitais memoráveis. Sites, landing pages e lojas virtuais com foco em resultado.">
+  <meta property="og:description" content="Sites escritos à mão, sem tema pronto. Você fala direto comigo, do primeiro WhatsApp até o site no ar.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://guatelipe.dev/">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:image" content="https://guatelipe.dev/images/guatelipe-logo.png">
+  <meta property="og:image:alt" content="Logo Guatelipe Web Development">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1254">
+  <meta property="og:image:height" content="1254">
   <meta property="og:site_name" content="Guatelipe Web Development">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Guatelipe | Desenvolvimento Web">
-  <meta name="twitter:description" content="Sites modernos, responsivos e orientados a resultados. Solicite um orçamento sem compromisso.">
+  <meta name="twitter:description" content="Sites escritos à mão, sem tema pronto. Atendimento direto com quem programa.">
   <meta name="twitter:image" content="https://guatelipe.dev/images/guatelipe-logo.png">
+  <meta name="twitter:image:alt" content="Logo Guatelipe Web Development">
 
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="icon" type="image/png" href="images/logo-pb.png">
+  <link rel="apple-touch-icon" href="images/logo-pb.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <script type="application/ld+json">
   {
@@ -35,13 +43,22 @@
     "url": "https://guatelipe.dev/",
     "image": "https://guatelipe.dev/images/guatelipe-logo.png",
     "email": "guatelipe.dev@gmail.com",
-    "sameAs": ["https://www.instagram.com/guatelipe_dev/"],
+    "telephone": "+55-31-99919-1545",
+    "sameAs": [
+      "https://www.instagram.com/guatelipe_dev/",
+      "https://www.linkedin.com/in/carlosguatelipe",
+      "https://github.com/CarlosGuatelipe"
+    ],
     "areaServed": "BR",
     "priceRange": "$$",
     "founder": {
       "@type": "Person",
       "name": "Carlos Guatelipe",
-      "jobTitle": "Desenvolvedor Web"
+      "jobTitle": "Desenvolvedor Web",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidade Estácio de Sá"
+      }
     },
     "makesOffer": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sites institucionais" } },
@@ -61,569 +78,817 @@
       { "@type": "Question", "name": "Quanto tempo leva para ficar pronto?", "acceptedAnswer": { "@type": "Answer", "text": "Uma landing page leva poucos dias; sites institucionais e lojas, algumas semanas. O prazo é combinado no briefing." } },
       { "@type": "Question", "name": "Preciso ter o conteúdo pronto?", "acceptedAnswer": { "@type": "Answer", "text": "Ajuda ter textos e imagens, mas não é obrigatório. Posso orientar na organização do conteúdo e na direção visual." } },
       { "@type": "Question", "name": "O site funciona no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todos os projetos são 100% responsivos e testados em celular, tablet e computador." } },
-      { "@type": "Question", "name": "Você cuida do domínio e da hospedagem?", "acceptedAnswer": { "@type": "Answer", "text": "Oriento na escolha e configuração do domínio e da hospedagem, e faço a publicação do site." } }
+      { "@type": "Question", "name": "Você cuida do domínio e da hospedagem?", "acceptedAnswer": { "@type": "Answer", "text": "Oriento na escolha e configuração do domínio e da hospedagem, e faço a publicação do site." } },
+      { "@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": { "@type": "Answer", "text": "Normalmente uma entrada para iniciar e o restante na entrega. As condições são combinadas antes de começar, por escrito." } },
+      { "@type": "Question", "name": "E depois que o site está no ar?", "acceptedAnswer": { "@type": "Answer", "text": "Você recebe orientação para usar o site e tem apoio para dúvidas. Manutenção e novas funcionalidades podem ser contratadas à parte." } }
     ]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <!-- ==========================================================================
+       MEDIÇÃO — Cloudflare Web Analytics
+       Gratuito, sem cookies, uma requisição. Por não usar cookie, não exige
+       banner de consentimento nem aviso de LGPD.
+
+       PARA LIGAR (2 minutos):
+       1. Entre em dash.cloudflare.com → Analytics & Logs → Web Analytics
+       2. "Add a site" → informe guatelipe.dev
+       3. Copie o token que aparece e cole abaixo no lugar de COLE_SEU_TOKEN
+       4. Apague as marcas de comentário desta linha e da seguinte
+
+       Está comentado de propósito: com o token vazio, o navegador faria uma
+       requisição a cada visita que nunca registraria nada.
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "COLE_SEU_TOKEN"}'></script>
+       ========================================================================== -->
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-light" aria-hidden="true"></div>
-  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <!-- Camadas de impressão: grão do papel e fios de diagramação. -->
+  <div class="backdrop" aria-hidden="true">
+    <span class="backdrop-wash wash-a"></span>
+    <span class="backdrop-wash wash-b"></span>
+    <span class="backdrop-wash wash-c"></span>
+    <span class="backdrop-wash wash-d"></span>
+    <span class="fog fog-a"></span>
+    <span class="fog fog-b"></span>
+  </div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Rótulo que acompanha o cursor sobre as pranchas do portfólio. -->
+  <div class="plate-cursor" id="plateCursor" aria-hidden="true"><span>Ver</span></div>
 
   <header class="header" id="header">
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <div class="container nav">
       <a class="logo" href="#inicio">
-        <span class="logo-circle">G</span>
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="50" cy="50" r="46" stroke-width="3.5"/>
+            <g transform="translate(50 50) scale(1.55) translate(-12 -12)">
+              <path stroke-width="2.1" d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/>
+            </g>
+          </svg>
+        </span>
         <span class="logo-text">
           <strong>GUATELIPE</strong>
           <small>WEB DEVELOPMENT</small>
         </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
         <span></span>
         <span></span>
       </button>
 
-      <nav class="menu">
-        <a href="#inicio">Início</a>
+      <nav class="menu" id="menuPrincipal" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#processo">Processo</a>
         <a href="#sobre">Sobre</a>
-        <a href="#faq">FAQ</a>
-        <a href="#orcamento">Orçamento</a>
+        <a href="#faq">Dúvidas</a>
       </nav>
 
-      <a href="#orcamento" class="btn btn-outline nav-cta">Solicitar orçamento</a>
+      <div class="nav-actions">
+        <span class="nav-status">Aceitando projetos</span>
+        <a href="#orcamento" class="btn btn-primary nav-cta">Orçamento</a>
+      </div>
     </div>
   </header>
 
+  <!-- Índice lateral, como o sumário de uma edição impressa. -->
+  <nav class="rail" id="rail" aria-label="Índice das seções">
+    <ol>
+      <li><a href="#inicio"><i>00</i><span>Capa</span></a></li>
+      <li><a href="#servicos"><i>01</i><span>Serviços</span></a></li>
+      <li><a href="#portfolio"><i>02</i><span>Portfólio</span></a></li>
+      <li><a href="#processo"><i>03</i><span>Processo</span></a></li>
+      <li><a href="#sobre"><i>04</i><span>Sobre</span></a></li>
+      <li><a href="#compromissos"><i>05</i><span>Compromissos</span></a></li>
+      <li><a href="#faq"><i>06</i><span>Dúvidas</span></a></li>
+      <li><a href="#orcamento"><i>07</i><span>Orçamento</span></a></li>
+    </ol>
+  </nav>
+
+  <div id="smoothWrapper"><div id="smoothContent">
+
   <main id="conteudo">
+
+    <!-- ============================================================ CAPA -->
     <section class="hero" id="inicio">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
-      <div class="hero-scan" aria-hidden="true"></div>
+      <div class="container">
 
-      <div class="container hero-layout">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> SITES PROFISSIONAIS</p>
+        <div class="hero-masthead">
+          <span class="sticker dot-live">Aceitando projetos para 2026</span>
+          <span>Belo Horizonte · MG — Brasil</span>
+          <span>Resposta em 48h úteis</span>
+        </div>
 
-          <h1>
-            Transformo ideias em
-            <span>experiências digitais</span>
-            memoráveis.
+        <div class="hero-main">
+          <h1 class="hero-title">
+            <span class="line"><span>Transformo</span></span>
+            <span class="line"><span>ideias em <em>experiências</em></span></span>
+            <span class="line"><span>digitais.</span></span>
           </h1>
 
-          <p class="hero-description">
-            Sites modernos, responsivos e estratégicos para destacar sua marca,
-            transmitir confiança e transformar visitantes em clientes.
-          </p>
+          <div class="hero-foot">
+            <p class="hero-lede">
+              Seu cliente te procura no Google, abre o site no celular e decide em
+              poucos segundos se confia. Eu cuido para que esses segundos joguem
+              a seu favor.
+            </p>
 
-          <div class="hero-actions">
-            <a href="#orcamento" class="btn btn-primary magnetic">
-              Solicitar orçamento <span>↗</span>
-            </a>
-            <a href="#portfolio" class="btn btn-outline magnetic">Ver portfólio</a>
-          </div>
-
-          <div class="hero-benefits">
-            <article>
-              <span>⚡</span>
-              <div><strong>Rápido</strong><small>Alta performance</small></div>
-            </article>
-            <article>
-              <span>◇</span>
-              <div><strong>Seguro</strong><small>Código organizado</small></div>
-            </article>
-            <article>
-              <span>▣</span>
-              <div><strong>Responsivo</strong><small>Todos os dispositivos</small></div>
-            </article>
-          </div>
-
-          <div class="hero-numbers">
-            <div><strong data-counter="100">0</strong><span>% responsivo</span></div>
-            <div><strong data-counter="95">0</strong><span>+ performance</span></div>
-            <div><strong data-counter="3">0</strong><span>pilares: UI, SEO e código</span></div>
-          </div>
-        </div>
-
-        <div class="hero-device reveal delay-1">
-          <div class="device-aura" aria-hidden="true"></div>
-
-          <div class="laptop" id="laptop">
-            <div class="laptop-screen">
-              <div class="screen-bar">
-                <div class="screen-dots"><i></i><i></i><i></i></div>
-                <span>guatelipe.dev</span>
-              </div>
-
-              <div class="screen-content">
-                <div class="editor">
-                  <div class="editor-tabs">
-                    <span class="active">index.html</span>
-                    <span>style.css</span>
-                    <span>script.js</span>
-                  </div>
-                  <pre><code id="typingCode"></code><span class="typing-cursor"></span></pre>
-                </div>
-
-                <div class="live-preview">
-                  <span class="preview-tag">LIVE PREVIEW</span>
-                  <div class="preview-mark">G</div>
-                  <strong>GUATELIPE</strong>
-                  <small>WEB DEVELOPMENT</small>
-                  <div class="preview-divider"></div>
-                  <p>Design • Performance • Resultados</p>
-                  <button type="button">CRIAR PROJETO</button>
-                </div>
-              </div>
-
-              <div class="screen-reflection"></div>
-            </div>
-
-            <div class="laptop-hinge"></div>
-            <div class="laptop-base">
-              <div class="trackpad"></div>
+            <div class="hero-actions">
+              <a href="#orcamento" class="btn btn-primary">Solicitar orçamento <span>↗</span></a>
+              <a href="#portfolio" class="btn btn-ghost">Ver portfólio</a>
             </div>
           </div>
-
-          <div class="floating-chip chip-one"><span>01</span> Design estratégico</div>
-          <div class="floating-chip chip-two"><span>02</span> Código responsivo</div>
-          <div class="floating-chip chip-three"><span>03</span> SEO e performance</div>
         </div>
       </div>
     </section>
 
+    <!-- ========================================================== TARJA -->
     <section class="ticker" aria-label="Serviços disponíveis">
       <div class="ticker-track">
-        <span>LANDING PAGES</span><i></i>
-        <span>SITES INSTITUCIONAIS</span><i></i>
-        <span>LOJAS VIRTUAIS</span><i></i>
-        <span>PORTFÓLIOS</span><i></i>
-        <span>SISTEMAS WEB</span><i></i>
-        <span>SEO</span><i></i>
-        <span>LANDING PAGES</span><i></i>
-        <span>SITES INSTITUCIONAIS</span><i></i>
+        <span>LANDING PAGES</span><i>✦</i>
+        <span>SITES INSTITUCIONAIS</span><i>✦</i>
+        <span>LOJAS VIRTUAIS</span><i>✦</i>
+        <span>PORTFÓLIOS</span><i>✦</i>
+        <span>SISTEMAS WEB</span><i>✦</i>
+        <span>SEO TÉCNICO</span><i>✦</i>
+      </div>
+      <div class="ticker-track" aria-hidden="true">
+        <span>LANDING PAGES</span><i>✦</i>
+        <span>SITES INSTITUCIONAIS</span><i>✦</i>
+        <span>LOJAS VIRTUAIS</span><i>✦</i>
+        <span>PORTFÓLIOS</span><i>✦</i>
+        <span>SISTEMAS WEB</span><i>✦</i>
+        <span>SEO TÉCNICO</span><i>✦</i>
       </div>
     </section>
 
+    <!-- ======================================================== PADRÕES -->
+    <section class="standards" aria-label="Padrões de entrega">
+      <div class="container">
+        <div class="standards-grid" data-cascata>
+          <div class="reveal">
+            <strong data-counter="95" data-suffix="+">0</strong>
+            <span>Pontuação PageSpeed</span>
+            <small>Meta mínima em cada entrega</small>
+          </div>
+          <div class="reveal">
+            <strong data-counter="100" data-suffix="%">0</strong>
+            <span>Responsivo</span>
+            <small>Testado em celular, tablet e desktop</small>
+          </div>
+          <div class="reveal">
+            <strong data-counter="48" data-suffix="h">0</strong>
+            <span>Resposta ao orçamento</span>
+            <small>Em dias úteis, por e-mail</small>
+          </div>
+          <div class="reveal">
+            <strong class="no-count">0</strong>
+            <span>Temas prontos</span>
+            <small>Tudo escrito do zero, sob medida</small>
+          </div>
+        </div>
+        <p class="standards-note">
+          Números são padrões de trabalho assumidos por mim — não médias de mercado.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================= SERVIÇOS -->
     <section class="section services" id="servicos">
       <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow"><span></span> SERVIÇOS</p>
-            <h2>Soluções digitais feitas para valorizar sua marca.</h2>
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>01</span> Serviços</p>
+          <div class="section-head-body">
+            <h2>Quatro tipos de projeto. Nenhum deles sai de <span class="marker">template</span>.</h2>
+            <p class="section-support">Cada projeto é criado de forma personalizada, considerando identidade, experiência do usuário, velocidade e objetivos comerciais. Abra um item para ver o que está incluso.</p>
           </div>
-          <p>
-            Cada projeto é criado de forma personalizada, considerando identidade,
-            experiência do usuário, velocidade e objetivos comerciais.
-          </p>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card reveal glow-card">
-            <div class="service-top"><span>01</span><b>▭</b></div>
-            <h3>Sites institucionais</h3>
-            <p>Apresente sua empresa com clareza, credibilidade e uma presença digital profissional.</p>
-            <a href="#orcamento">Solicitar projeto ↗</a>
-          </article>
+        <div class="service-list" data-cascata>
+          <details class="service-item reveal">
+            <summary>
+              <span class="service-num">01</span>
+              <h3>Sites institucionais</h3>
+              <span class="service-desc">Para quando alguém pesquisa o nome da sua empresa e precisa achar algo melhor que um perfil de rede social.</span>
+              <span class="service-term">2 a 4 semanas</span>
+              <span class="service-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="service-panel">
+              <div class="service-col">
+                <p class="service-col-title">O que está incluso</p>
+                <ul>
+                  <li>Estrutura de páginas definida com você</li>
+                  <li>Design exclusivo, sem tema pronto</li>
+                  <li>Formulário de contato integrado</li>
+                  <li>Otimização de imagens e velocidade</li>
+                  <li>SEO técnico e integração com o Google</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <p class="service-col-title">Ideal para</p>
+                <ul>
+                  <li>Empresas que precisam transmitir seriedade</li>
+                  <li>Profissionais liberais e consultorias</li>
+                  <li>Quem quer sair do perfil de rede social</li>
+                </ul>
+                <a href="#orcamento" class="btn btn-ghost btn-sm">Solicitar orçamento <span>↗</span></a>
+              </div>
+            </div>
+          </details>
 
-          <article class="service-card featured reveal delay-1 glow-card">
-            <div class="service-top"><span>02</span><b>&lt;/&gt;</b></div>
-            <h3>Landing pages</h3>
-            <p>Páginas focadas em conversão para campanhas, serviços, produtos e lançamentos.</p>
-            <a href="#orcamento">Solicitar projeto ↗</a>
-          </article>
+          <details class="service-item reveal">
+            <summary>
+              <span class="service-num">02</span>
+              <h3>Landing pages</h3>
+              <span class="service-desc">Uma página, um objetivo: fazer quem clicou no anúncio virar contato no seu WhatsApp.</span>
+              <span class="service-term">3 a 10 dias</span>
+              <span class="service-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="service-panel">
+              <div class="service-col">
+                <p class="service-col-title">O que está incluso</p>
+                <ul>
+                  <li>Página única com argumentação em sequência</li>
+                  <li>Chamada para ação em pontos estratégicos</li>
+                  <li>Formulário ou botão direto para WhatsApp</li>
+                  <li>Carregamento rápido para tráfego pago</li>
+                  <li>Pronta para pixel e Google Analytics</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <p class="service-col-title">Ideal para</p>
+                <ul>
+                  <li>Campanhas de anúncio</li>
+                  <li>Lançamento de produto ou serviço</li>
+                  <li>Captação de contatos</li>
+                </ul>
+                <a href="#orcamento" class="btn btn-ghost btn-sm">Solicitar orçamento <span>↗</span></a>
+              </div>
+            </div>
+          </details>
 
-          <article class="service-card reveal delay-2 glow-card">
-            <div class="service-top"><span>03</span><b>◇</b></div>
-            <h3>Lojas virtuais</h3>
-            <p>Estruturas completas para vender online com organização, confiança e velocidade.</p>
-            <a href="#orcamento">Solicitar projeto ↗</a>
-          </article>
+          <details class="service-item reveal">
+            <summary>
+              <span class="service-num">03</span>
+              <h3>Lojas virtuais</h3>
+              <span class="service-desc">Para sair do "me chama no direct" e ter carrinho, pagamento e frete rodando sozinhos.</span>
+              <span class="service-term">3 a 6 semanas</span>
+              <span class="service-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="service-panel">
+              <div class="service-col">
+                <p class="service-col-title">O que está incluso</p>
+                <ul>
+                  <li>Catálogo organizado por categoria</li>
+                  <li>Carrinho e finalização de compra</li>
+                  <li>Integração com meio de pagamento</li>
+                  <li>Cálculo de frete</li>
+                  <li>Painel para você cadastrar produtos</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <p class="service-col-title">Ideal para</p>
+                <ul>
+                  <li>Quem vende hoje só por WhatsApp</li>
+                  <li>Marcas com catálogo próprio</li>
+                  <li>Quem quer sair das taxas de marketplace</li>
+                </ul>
+                <a href="#orcamento" class="btn btn-ghost btn-sm">Solicitar orçamento <span>↗</span></a>
+              </div>
+            </div>
+          </details>
 
-          <article class="service-card reveal delay-3 glow-card">
-            <div class="service-top"><span>04</span><b>▦</b></div>
-            <h3>Sistemas personalizados</h3>
-            <p>Ferramentas sob medida para organizar processos, cadastros e operações.</p>
-            <a href="#orcamento">Solicitar projeto ↗</a>
-          </article>
+          <details class="service-item reveal">
+            <summary>
+              <span class="service-num">04</span>
+              <h3>Sistemas personalizados</h3>
+              <span class="service-desc">Quando a planilha já não dá conta e cada pessoa do time tem uma versão diferente dela.</span>
+              <span class="service-term">Sob análise</span>
+              <span class="service-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="service-panel">
+              <div class="service-col">
+                <p class="service-col-title">O que está incluso</p>
+                <ul>
+                  <li>Levantamento do processo atual</li>
+                  <li>Área de login por usuário</li>
+                  <li>Cadastros, listagens e relatórios</li>
+                  <li>Painel administrativo</li>
+                  <li>Treinamento de uso na entrega</li>
+                </ul>
+              </div>
+              <div class="service-col">
+                <p class="service-col-title">Ideal para</p>
+                <ul>
+                  <li>Operações controladas em planilha</li>
+                  <li>Times que repetem tarefas manuais</li>
+                  <li>Negócios com processo próprio</li>
+                </ul>
+                <a href="#orcamento" class="btn btn-ghost btn-sm">Solicitar orçamento <span>↗</span></a>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
+    <!-- ====================================================== PORTFÓLIO -->
     <section class="section portfolio" id="portfolio">
       <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow"><span></span> PORTFÓLIO</p>
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>02</span> Portfólio</p>
+          <div class="section-head-body">
             <h2>Projetos criados para causar uma ótima primeira impressão.</h2>
+            <p class="section-support">Trabalho publicado, no ar e navegável. Clique e confira você mesmo.</p>
           </div>
-          <p>Cards preparados para receber imagens reais dos seus próximos projetos.</p>
         </div>
+
+        <!-- Sumário de projetos, no formato de índice de revista. -->
+        <table class="work-index reveal">
+          <caption class="sr-only">Índice de projetos</caption>
+          <thead>
+            <tr>
+              <th scope="col">N.º</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Disciplina</th>
+              <th scope="col">Ano</th>
+              <th scope="col">Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>Caroline Scarabelli</td>
+              <td>Landing page · Fisioterapia</td>
+              <td>2026</td>
+              <td>No ar</td>
+            </tr>
+            <tr class="work-index-open">
+              <td>002</td>
+              <td>Vaga aberta</td>
+              <td>A definir</td>
+              <td>2026</td>
+              <td>Disponível</td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class="portfolio-grid">
-          <article class="project-card project-large reveal tilt-card">
-            <div class="project-image project-severe">
-              <div class="project-browser">
-                <span></span><span></span><span></span>
-                <small>severecorp.com</small>
-              </div>
-              <div class="project-center">
-                <small>SEVERE CORP · CREATIVE STUDIO</small>
-                <strong class="severe-title">Construímos marcas<span>que deixam presença.</span></strong>
-                <p>Branding · Design · Marketing · Web</p>
-              </div>
-              <div class="project-shine"></div>
-            </div>
+          <article class="project-card project-wide reveal">
+            <a class="project-plate project-shot" href="https://fisiocarolscarabelli.netlify.app" target="_blank" rel="noopener" data-plate>
+              <span class="plate-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+
+              <span class="plate-meta"><span>fisiocarolscarabelli.netlify.app</span><span>N.º 001</span></span>
+
+              <span class="shot-frame">
+                <img src="images/projeto-caroline.jpg"
+                     alt="Página inicial do site de Caroline Scarabelli, fisioterapeuta"
+                     width="1440" height="527" loading="lazy" decoding="async">
+              </span>
+
+              <span class="plate-foot">
+                <span>Landing page · Conversão</span>
+                <span>2026</span>
+              </span>
+            </a>
+
             <div class="project-info">
-              <div><span>Creative studio · Branding &amp; Web</span><h3>Severe Corp</h3></div>
-              <a href="#orcamento">Ver projeto ↗</a>
+              <div>
+                <span>Landing page · Fisioterapia domiciliar</span>
+                <h3>Caroline Scarabelli</h3>
+              </div>
+              <a href="https://fisiocarolscarabelli.netlify.app" target="_blank" rel="noopener">Abrir o site <span>↗</span></a>
             </div>
           </article>
 
-          <article class="project-card reveal delay-1 tilt-card">
-            <div class="project-image project-rbx">
-              <div class="project-browser">
-                <span></span><span></span><span></span>
-                <small>rbxforge.com</small>
-              </div>
-              <div class="project-center">
-                <small>MARKETPLACE</small>
-                <strong>RBX<span>FORGE</span></strong>
-              </div>
-              <div class="project-shine"></div>
-            </div>
-            <div class="project-info">
-              <div><span>Marketplace digital</span><h3>RBXForge</h3></div>
-              <a href="#orcamento">Ver projeto ↗</a>
-            </div>
-          </article>
+          <article class="project-card project-wide project-invite reveal">
+            <div class="project-plate project-next" data-plate>
+              <span class="plate-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              <span class="plate-ghost" aria-hidden="true">002</span>
+              <span class="burst" aria-hidden="true">vaga<br>aberta</span>
 
-          <article class="project-card reveal delay-2 tilt-card">
-            <div class="project-image project-next">
-              <div class="project-browser">
-                <span></span><span></span><span></span>
-                <small>seuprojeto.com</small>
+              <span class="plate-meta"><span>seuprojeto.com</span><span>N.º 002</span></span>
+
+              <div class="plate-center" data-plate-layer>
+                <small>Próximo projeto</small>
+                <strong class="next-title">Sua<span>marca</span></strong>
+                <a href="#orcamento" class="btn btn-primary btn-sm">Solicitar orçamento <span>↗</span></a>
               </div>
-              <div class="project-center">
-                <small>PRÓXIMO PROJETO</small>
-                <strong>SUA<span>MARCA</span></strong>
-              </div>
-              <div class="project-shine"></div>
-            </div>
-            <div class="project-info">
-              <div><span>Projeto personalizado</span><h3>Sua empresa aqui</h3></div>
-              <a href="#orcamento">Começar ↗</a>
+
+              <span class="plate-foot">
+                <span>Vaga aberta nesta edição</span>
+                <span>2026</span>
+              </span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section process" id="processo">
+    <!-- ======================================================== PROCESSO -->
+    <section class="section process inverted" id="processo">
       <div class="container">
-        <div class="section-title reveal">
-          <p class="eyebrow centered"><span></span> PROCESSO</p>
-          <h2>Da ideia ao site publicado.</h2>
-        </div>
-
-        <div class="process-grid">
-          <article class="reveal">
-            <span>01</span><h3>Briefing</h3>
-            <p>Entendimento do negócio, público, objetivos e referências.</p>
-          </article>
-          <article class="reveal delay-1">
-            <span>02</span><h3>Estratégia</h3>
-            <p>Definição da estrutura, conteúdo, experiência e direção visual.</p>
-          </article>
-          <article class="reveal delay-2">
-            <span>03</span><h3>Desenvolvimento</h3>
-            <p>Construção responsiva com atenção ao desempenho e aos detalhes.</p>
-          </article>
-          <article class="reveal delay-3">
-            <span>04</span><h3>Entrega</h3>
-            <p>Testes finais, publicação e orientação para utilizar o projeto.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about" id="sobre">
-      <div class="container about-layout">
-        <div class="about-visual reveal">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="about-mark">G</div>
-          <span class="skill skill-one">UI/UX</span>
-          <span class="skill skill-two">SEO</span>
-          <span class="skill skill-three">CODE</span>
-          <span class="skill skill-four">PERFORMANCE</span>
-        </div>
-
-        <div class="about-copy reveal delay-1">
-          <p class="eyebrow"><span></span> SOBRE MIM</p>
-          <h2>Desenvolvimento com identidade, cuidado e propósito.</h2>
-          <p>
-            Sou Carlos Guatelipe, desenvolvedor web focado em criar experiências digitais
-            modernas, organizadas e visualmente marcantes.
-          </p>
-          <p>
-            Meu objetivo é transformar ideias em projetos que transmitam confiança,
-            tenham boa performance e valorizem a presença online de cada cliente.
-          </p>
-
-          <div class="about-list">
-            <div><span>01</span> Design responsivo</div>
-            <div><span>02</span> Experiência do usuário</div>
-            <div><span>03</span> Otimização e SEO</div>
-            <div><span>04</span> Código organizado</div>
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>03</span> Processo</p>
+          <div class="section-head-body">
+            <h2>Da ideia ao site publicado, em quatro movimentos.</h2>
+            <p class="section-support">Você sabe exatamente em que etapa o projeto está, e o que vem depois dela.</p>
           </div>
         </div>
+
+        <div class="process-grid" data-cascata>
+          <article class="reveal">
+            <div class="process-top">
+              <span class="process-num">01</span>
+              <span class="process-term">1 a 2 dias</span>
+            </div>
+            <h3>Briefing</h3>
+            <p>Conversa para entender negócio, público, objetivos e referências. Saio daqui com o escopo escrito.</p>
+            <ul>
+              <li>Reunião ou questionário</li>
+              <li>Escopo e prazo por escrito</li>
+              <li>Proposta fechada</li>
+            </ul>
+          </article>
+          <article class="reveal">
+            <div class="process-top">
+              <span class="process-num">02</span>
+              <span class="process-term">2 a 5 dias</span>
+            </div>
+            <h3>Estratégia</h3>
+            <p>Definição da estrutura, do conteúdo, da experiência e da direção visual antes de escrever código.</p>
+            <ul>
+              <li>Mapa de páginas e seções</li>
+              <li>Direção visual aprovada</li>
+              <li>Organização dos textos</li>
+            </ul>
+          </article>
+          <article class="reveal">
+            <div class="process-top">
+              <span class="process-num">03</span>
+              <span class="process-term">1 a 4 semanas</span>
+            </div>
+            <h3>Desenvolvimento</h3>
+            <p>Construção responsiva com atenção ao desempenho e aos detalhes, com prévias para você acompanhar.</p>
+            <ul>
+              <li>Link de prévia durante a obra</li>
+              <li>Rodadas de ajuste inclusas</li>
+              <li>Testes em vários aparelhos</li>
+            </ul>
+          </article>
+          <article class="reveal">
+            <div class="process-top">
+              <span class="process-num">04</span>
+              <span class="process-term">1 a 2 dias</span>
+            </div>
+            <h3>Entrega</h3>
+            <p>Testes finais, publicação no domínio e orientação para você usar o projeto com autonomia.</p>
+            <ul>
+              <li>Publicação e domínio configurados</li>
+              <li>Google Search Console ativo</li>
+              <li>Orientação de uso gravada</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section testimonials" id="depoimentos">
+    <!-- =========================================================== SOBRE -->
+    <section class="section about" id="sobre">
       <div class="container">
-        <div class="section-title reveal">
-          <p class="eyebrow centered"><span></span> O QUE ESPERAR</p>
-          <h2>Compromissos com cada projeto.</h2>
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>04</span> Sobre</p>
+          <div class="section-head-body">
+            <h2>Desenvolvimento com identidade, cuidado e propósito.</h2>
+            <p class="section-support">Quem escreve o código do seu site, quem responde o seu WhatsApp e quem publica no ar são a mesma pessoa.</p>
+          </div>
         </div>
 
-        <div class="guarantee-grid">
-          <article class="guarantee-card reveal glow-card">
-            <b aria-hidden="true">✓</b>
+        <div class="about-layout">
+          <div class="about-side reveal">
+            <figure class="about-figure">
+              <div class="portrait">
+                <img src="images/carlos-guatelipe.jpg" alt="Retrato de Carlos Guatelipe" width="704" height="880" loading="lazy" decoding="async">
+                <span class="portrait-tag">Carlos Guatelipe</span>
+              </div>
+              <figcaption><span class="sticker sticker-sm">Belo Horizonte · MG</span> Você fala direto comigo, do briefing à publicação.</figcaption>
+            </figure>
+
+            <aside class="colophon" aria-label="Ficha técnica">
+              <p class="colophon-title">Ficha técnica</p>
+              <dl>
+                <div><dt>Disciplinas</dt><dd>Sites · Landing pages · Lojas · Sistemas</dd></div>
+                <div><dt>Tecnologia</dt><dd>HTML · CSS · JavaScript · SEO técnico</dd></div>
+                <div><dt>Entrega</dt><dd>Responsiva, testada e publicada</dd></div>
+                <div><dt>Formação</dt><dd>Análise e Desenvolvimento de Sistemas — Estácio de Sá (cursando)</dd></div>
+                <div><dt>Base</dt><dd>Belo Horizonte · MG — atendo todo o Brasil</dd></div>
+              </dl>
+            </aside>
+          </div>
+
+          <div class="about-copy reveal">
+            <p class="about-lede">
+              Sou Carlos Guatelipe. Faço sites à mão, linha por linha, e atendo cada
+              cliente pessoalmente — do primeiro WhatsApp até o site no ar.
+            </p>
+            <p>
+              Meu objetivo é transformar ideias em projetos que transmitam confiança,
+              tenham boa performance e valorizem a presença online de cada cliente.
+              Trabalho direto com você — sem intermediário, sem retrabalho perdido em
+              telefone sem fio.
+            </p>
+            <p>
+              Não uso tema pronto nem construtor visual. Cada página é escrita à mão,
+              o que significa um site mais leve, mais fácil de encontrar no Google e
+              que não trava quando você precisa mudar alguma coisa.
+            </p>
+            <p>
+              Curso <strong>Análise e Desenvolvimento de Sistemas na Estácio de Sá</strong>,
+              o que mantém a prática do dia a dia sempre encostada na fundamentação —
+              lógica, banco de dados e arquitetura de software.
+            </p>
+          </div>
+        </div>
+
+        <ul class="about-list reveal">
+          <li><span>01</span> Design responsivo</li>
+          <li><span>02</span> Experiência do usuário</li>
+          <li><span>03</span> Otimização e SEO</li>
+          <li><span>04</span> Código organizado</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====================================================== CITAÇÃO -->
+    <section class="pullquote" aria-label="Posicionamento">
+      <div class="container">
+        <blockquote class="reveal">
+          <p>Nenhum tema pronto. Cada projeto começa numa folha em branco — e é por isso que ele não se parece com nenhum outro.</p>
+          <cite>Carlos Guatelipe</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================================================== COMPROMISSOS -->
+    <section class="section pledges" id="compromissos">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>05</span> Compromissos</p>
+          <div class="section-head-body">
+            <h2>O que você pode esperar em qualquer projeto que eu assinar.</h2>
+            <p class="section-support">Não são promessas de vendedor: são as quatro coisas que ficam escritas na proposta antes de você pagar qualquer coisa.</p>
+          </div>
+        </div>
+
+        <div class="pledge-grid" data-cascata>
+          <article class="pledge reveal">
+            <span class="pledge-num">01</span>
             <h3>Comunicação clara</h3>
             <p>Você acompanha cada etapa e recebe atualizações diretas, sem termos técnicos desnecessários.</p>
+            <span class="pledge-tag">Link de prévia desde a primeira semana</span>
           </article>
-          <article class="guarantee-card reveal delay-1 glow-card">
-            <b aria-hidden="true">⚡</b>
+          <article class="pledge reveal">
+            <span class="pledge-num">02</span>
             <h3>Entrega no prazo</h3>
             <p>Cronograma definido no início e cumprido, com prazos combinados de forma realista.</p>
+            <span class="pledge-tag">Escopo e data por escrito antes de começar</span>
           </article>
-          <article class="guarantee-card reveal delay-2 glow-card">
-            <b aria-hidden="true">↺</b>
+          <article class="pledge reveal">
+            <span class="pledge-num">03</span>
             <h3>Ajustes inclusos</h3>
             <p>Rodadas de revisão durante o desenvolvimento para o resultado ficar do seu jeito.</p>
+            <span class="pledge-tag">Sem cobrança extra dentro do escopo</span>
           </article>
-          <article class="guarantee-card reveal delay-3 glow-card">
-            <b aria-hidden="true">◈</b>
+          <article class="pledge reveal">
+            <span class="pledge-num">04</span>
             <h3>Suporte após a entrega</h3>
             <p>Orientação para você usar o site e apoio para dúvidas depois da publicação.</p>
+            <span class="pledge-tag">30 dias de suporte incluídos</span>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ============================================================= FAQ -->
     <section class="section faq" id="faq">
-      <div class="container faq-layout">
-        <div class="faq-intro reveal">
-          <p class="eyebrow"><span></span> DÚVIDAS FREQUENTES</p>
-          <h2>Perguntas comuns antes de começar.</h2>
-          <p>Se a sua dúvida não estiver aqui, é só enviar pelo formulário — respondo pessoalmente.</p>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>06</span> Dúvidas</p>
+          <div class="section-head-body">
+            <h2>Perguntas comuns antes de começar.</h2>
+            <p class="section-support">Se a sua não estiver aqui, é só perguntar no formulário — respondo pessoalmente.</p>
+          </div>
         </div>
 
-        <div class="faq-list reveal delay-1">
-          <details class="faq-item">
-            <summary>Quanto custa um site?</summary>
+        <div class="faq-list reveal" data-cascata>
+          <details class="faq-item reveal">
+            <summary><i>Q1</i> Quanto custa um site?</summary>
             <div class="faq-answer"><p>O valor depende do tipo de projeto, número de páginas e funcionalidades. Cada orçamento é personalizado — preencha o formulário e envio uma proposta sob medida, sem compromisso.</p></div>
           </details>
-          <details class="faq-item">
-            <summary>Quanto tempo leva para ficar pronto?</summary>
-            <div class="faq-answer"><p>Uma landing page costuma levar poucos dias; sites institucionais e lojas, algumas semanas. O prazo exato é combinado no briefing, de acordo com o escopo.</p></div>
+          <details class="faq-item reveal">
+            <summary><i>Q2</i> Quanto tempo leva para ficar pronto?</summary>
+            <div class="faq-answer"><p>Uma landing page costuma levar de 3 a 10 dias; sites institucionais, de 2 a 4 semanas; lojas, de 3 a 6 semanas. O prazo exato é combinado no briefing, de acordo com o escopo.</p></div>
           </details>
-          <details class="faq-item">
-            <summary>Preciso ter o conteúdo pronto?</summary>
+          <details class="faq-item reveal">
+            <summary><i>Q3</i> Preciso ter o conteúdo pronto?</summary>
             <div class="faq-answer"><p>Ajuda ter textos e imagens em mãos, mas não é obrigatório. Posso orientar na organização do conteúdo e na direção visual do projeto.</p></div>
           </details>
-          <details class="faq-item">
-            <summary>O site funciona no celular?</summary>
+          <details class="faq-item reveal">
+            <summary><i>Q4</i> O site funciona no celular?</summary>
             <div class="faq-answer"><p>Sim. Todos os projetos são 100% responsivos e testados em celular, tablet e computador, com foco em desempenho.</p></div>
           </details>
-          <details class="faq-item">
-            <summary>Você cuida do domínio e da hospedagem?</summary>
+          <details class="faq-item reveal">
+            <summary><i>Q5</i> Você cuida do domínio e da hospedagem?</summary>
             <div class="faq-answer"><p>Oriento na escolha e configuração do domínio e da hospedagem, e faço a publicação do site para você começar a usar sem complicação.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><i>Q6</i> Como funciona o pagamento?</summary>
+            <div class="faq-answer"><p>Normalmente uma entrada para iniciar o projeto e o restante na entrega. As condições são combinadas antes de começar e ficam registradas por escrito, junto com o escopo.</p></div>
+          </details>
+          <details class="faq-item reveal">
+            <summary><i>Q7</i> E depois que o site está no ar?</summary>
+            <div class="faq-answer"><p>Você recebe orientação para usar o site e tem 30 dias de suporte para dúvidas. Manutenção contínua e novas funcionalidades podem ser contratadas à parte, sem obrigação.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="section quote" id="orcamento">
-      <div class="quote-glow" aria-hidden="true"></div>
-
-      <div class="container quote-layout">
-        <div class="quote-copy reveal">
-          <p class="eyebrow"><span></span> ORÇAMENTO</p>
-          <h2>Vamos transformar sua ideia em um projeto real?</h2>
-          <p>
-            Responda algumas perguntas. No final, a solicitação será enviada por e-mail
-            e você receberá uma confirmação do envio.
-          </p>
-
-          <div class="quote-checks">
-            <div><span>✓</span> Orçamento personalizado</div>
-            <div><span>✓</span> Processo simples e direto</div>
-            <div><span>✓</span> Sem compromisso</div>
+    <!-- ======================================================= ORÇAMENTO -->
+    <section class="section quote inverted" id="orcamento">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-kicker"><span>07</span> Orçamento</p>
+          <div class="section-head-body">
+            <h2>Vamos transformar a sua ideia em um projeto <span class="marker">real</span>?</h2>
+            <p class="section-support">Três campos. A solicitação chega no meu e-mail e eu respondo em até 48h úteis.</p>
           </div>
         </div>
 
-        <form class="quote-form reveal delay-1" id="quoteForm">
-          <div class="form-progress">
-            <div><span id="progressBar"></span></div>
-            <small>ETAPA <b id="stepNumber">1</b> DE 4</small>
+        <div class="quote-layout">
+          <div class="quote-copy reveal">
+            <p class="quote-big">Vamos transformar sua ideia em um projeto real?</p>
+            <ul class="quote-checks">
+              <li>Orçamento personalizado</li>
+              <li>Três campos, sem questionário</li>
+              <li>Resposta em até 48h úteis</li>
+              <li>Sem compromisso</li>
+            </ul>
+
+            <div class="quote-direct">
+              <p class="colophon-title">Prefere falar direto?</p>
+              <a href="https://wa.me/5531999191545" target="_blank" rel="noopener">WhatsApp (31) 99919-1545 ↗</a>
+              <a href="mailto:guatelipe.dev@gmail.com">guatelipe.dev@gmail.com</a>
+            </div>
+
+            <p class="quote-note">Seus dados são usados somente para responder à solicitação.</p>
           </div>
 
-          <section class="form-step active" data-step="1">
-            <p class="form-kicker">01 — CONTATO</p>
-            <h3>Como posso falar com você?</h3>
+          <form class="quote-form reveal" id="quoteForm" novalidate aria-label="Formulário de orçamento">
+            <p class="form-kicker">Orçamento sem compromisso</p>
+            <h3>Me conta o que você precisa.</h3>
 
             <div class="form-grid">
               <label>
                 <span>Nome *</span>
-                <input id="name" type="text" placeholder="Seu nome" required>
-              </label>
-              <label>
-                <span>Empresa</span>
-                <input id="company" type="text" placeholder="Nome da empresa">
-              </label>
-              <label>
-                <span>E-mail *</span>
-                <input id="clientEmail" type="email" placeholder="voce@email.com" required autocomplete="email">
+                <input id="name" name="name" type="text" placeholder="Seu nome" required autocomplete="name">
               </label>
               <label>
                 <span>WhatsApp *</span>
-                <input id="phone" type="tel" placeholder="(31) 99999-9999" required autocomplete="tel">
-              </label>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="2">
-            <p class="form-kicker">02 — PROJETO</p>
-            <h3>O que você precisa desenvolver?</h3>
-
-            <div class="project-options">
-              <label>
-                <input type="radio" name="projectType" value="Site institucional" required>
-                <span>▭</span><strong>Site institucional</strong><small>Orçamento personalizado</small>
-              </label>
-              <label>
-                <input type="radio" name="projectType" value="Landing page">
-                <span>&lt;/&gt;</span><strong>Landing page</strong><small>Orçamento personalizado</small>
-              </label>
-              <label>
-                <input type="radio" name="projectType" value="Loja virtual">
-                <span>◇</span><strong>Loja virtual</strong><small>Orçamento personalizado</small>
-              </label>
-              <label>
-                <input type="radio" name="projectType" value="Sistema personalizado">
-                <span>▦</span><strong>Sistema</strong><small>Orçamento personalizado</small>
-              </label>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="3">
-            <p class="form-kicker">03 — ESCOPO</p>
-            <h3>Qual é o tamanho do projeto?</h3>
-
-            <div class="form-grid">
-              <label>
-                <span>Quantidade de páginas</span>
-                <select id="pages">
-                  <option value="1 página">1 página</option>
-                  <option value="Até 3 páginas">Até 3 páginas</option>
-                  <option value="Até 5 páginas">Até 5 páginas</option>
-                  <option value="Até 8 páginas">Até 8 páginas</option>
-                  <option value="Mais de 8 páginas">Mais de 8 páginas</option>
-                </select>
-              </label>
-
-              <label>
-                <span>Prazo desejado</span>
-                <select id="deadline">
-                  <option value="Flexível">Flexível</option>
-                  <option value="Até 30 dias">Até 30 dias</option>
-                  <option value="Até 15 dias">Até 15 dias</option>
-                </select>
+                <input id="phone" name="phone" type="tel" placeholder="(31) 99999-9999" required autocomplete="tel" inputmode="tel">
               </label>
             </div>
 
-            <p class="extras-title">Funcionalidades adicionais</p>
-            <div class="extras-grid">
-              <label><input type="checkbox" value="Blog"> Blog</label>
-              <label><input type="checkbox" value="Área de login"> Área de login</label>
-              <label><input type="checkbox" value="Painel administrativo"> Painel administrativo</label>
-              <label><input type="checkbox" value="Pagamento online"> Pagamento online</label>
-              <label><input type="checkbox" value="Agendamento"> Agendamento</label>
-              <label><input type="checkbox" value="SEO avançado"> SEO avançado</label>
-            </div>
-          </section>
-
-          <section class="form-step" data-step="4">
-            <p class="form-kicker">04 — DETALHES</p>
-            <h3>Conte um pouco mais sobre sua ideia.</h3>
+            <fieldset class="chips">
+              <legend>Que tipo de projeto? <i>opcional</i></legend>
+              <div class="chips-row">
+                <label><input type="radio" name="projectType" value="Site institucional"><span>Site institucional</span></label>
+                <label><input type="radio" name="projectType" value="Landing page"><span>Landing page</span></label>
+                <label><input type="radio" name="projectType" value="Loja virtual"><span>Loja virtual</span></label>
+                <label><input type="radio" name="projectType" value="Sistema personalizado"><span>Sistema</span></label>
+                <label><input type="radio" name="projectType" value="Ainda não sei"><span>Ainda não sei</span></label>
+              </div>
+            </fieldset>
 
             <label class="message-field">
-              <span>Descrição do projeto *</span>
-              <textarea id="description" rows="5" placeholder="Ex.: Preciso de um site para apresentar minha empresa e receber contatos..." required></textarea>
+              <span>Sobre o projeto *</span>
+              <textarea id="description" name="description" rows="5" placeholder="Ex.: tenho uma clínica e quero um site para as pessoas me acharem no Google e chamarem no WhatsApp." required></textarea>
             </label>
-          </section>
 
-          <div class="form-actions">
-            <button class="btn btn-muted" id="backBtn" type="button" disabled>Voltar</button>
-            <button class="btn btn-primary" id="nextBtn" type="button">Continuar →</button>
-            <button class="btn btn-primary submit-btn" id="submitBtn" type="submit">Enviar orçamento por e-mail ↗</button>
-          </div>
+            <details class="form-extra">
+              <summary>Prefere que eu responda por e-mail?</summary>
+              <label>
+                <span>E-mail</span>
+                <input id="clientEmail" name="clientEmail" type="email" placeholder="voce@email.com" autocomplete="email" inputmode="email">
+              </label>
+            </details>
 
-          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
-          <p class="email-note">Seus dados serão usados somente para responder à solicitação.</p>
-        </form>
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">Não preencha este campo</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary submit-btn" id="submitBtn" type="submit">Enviar <span>↗</span></button>
+              <a class="form-wa" href="https://wa.me/5531999191545?text=Ol%C3%A1%2C%20Carlos!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">ou chame direto no WhatsApp ↗</a>
+            </div>
+
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= CHAMADA -->
+    <section class="cta-band">
+      <div class="ghost-band" aria-hidden="true"><span>vamos começar vamos começar</span><span>vamos começar vamos começar</span></div>
+      <div class="container">
+        <p class="cta-kicker">Última chamada</p>
+        <p class="cta-line">
+          <a href="#orcamento">Vamos começar<em> o seu </em>projeto<span>↗</span></a>
+        </p>
+        <p class="cta-note">Resposta em até 48h úteis · Sem compromisso</p>
       </div>
     </section>
   </main>
 
+  <!-- ========================================================== RODAPÉ -->
   <footer class="footer">
-    <div class="container footer-content">
-      <a class="logo" href="#inicio">
-        <span class="logo-circle">G</span>
-        <span class="logo-text"><strong>GUATELIPE</strong><small>WEB DEVELOPMENT</small></span>
-      </a>
+    <div class="container">
+      <div class="footer-mast">
+        <a class="footer-word" href="#inicio" aria-label="Voltar ao topo">GUATELIPE</a>
+      </div>
 
-      <nav class="footer-links" aria-label="Contato e redes">
-        <a class="footer-ig" href="https://www.instagram.com/guatelipe_dev/" target="_blank" rel="noopener" aria-label="Instagram @guatelipe_dev">
-          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
-            <circle cx="12" cy="12" r="4.6"></circle>
-            <circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"></circle>
-          </svg>
-          @guatelipe_dev
-        </a>
-        <a href="mailto:guatelipe.dev@gmail.com">E-mail</a>
-        <a href="#faq">FAQ</a>
-        <a href="#orcamento">Orçamento</a>
-      </nav>
+      <div class="footer-cols" data-cascata>
+        <div class="footer-col">
+          <p class="footer-label">Contato</p>
+          <a href="mailto:guatelipe.dev@gmail.com" id="footerEmailLink">guatelipe.dev@gmail.com</a>
+          <a href="https://wa.me/5531999191545" target="_blank" rel="noopener">(31) 99919-1545</a>
+          <p class="footer-note">Seg. a sex., 9h às 18h</p>
+        </div>
 
-      <p>© 2026 Guatelipe. Todos os direitos reservados.</p>
-      <a href="#inicio">Voltar ao topo ↑</a>
+        <div class="footer-col">
+          <p class="footer-label">Redes</p>
+          <a href="https://www.instagram.com/guatelipe_dev/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.linkedin.com/in/carlosguatelipe" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/CarlosGuatelipe" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-label">Navegar</p>
+          <a href="#servicos">Serviços</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#processo">Processo</a>
+          <a href="#faq">Dúvidas</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-label">Colofão</p>
+          <p class="footer-note">
+            Feito à mão em HTML, CSS e JavaScript, sem construtor visual
+            e sem tema pronto.
+          </p>
+          <p class="footer-note">
+            Tipografia: Archivo, Instrument Serif e JetBrains Mono.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <span>© <span id="footerYear">2026</span> Guatelipe. Todos os direitos reservados.</span>
+        <span>Belo Horizonte · MG — Brasil</span>
+        <span>Edição N.º 01</span>
+      </div>
     </div>
   </footer>
 
-  <!-- WhatsApp -->
-  <a class="whatsapp-float" id="whatsappFloat"
-     href="https://wa.me/5531999191545?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento."
-     target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true">
-      <path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.75 5.5 2.16 7.9L.5 31.5l7.8-2.04A15.4 15.4 0 0016 31.5C24.6 31.5 31.5 24.6 31.5 16S24.6.5 16 .5zm0 28.2c-2.5 0-4.9-.67-7-1.93l-.5-.3-4.63 1.2 1.24-4.5-.33-.52A12.6 12.6 0 013.3 16C3.3 9 9 3.3 16 3.3S28.7 9 28.7 16 23 28.7 16 28.7zm7-9.5c-.38-.2-2.26-1.12-2.6-1.24-.35-.13-.6-.2-.86.19-.25.38-.98 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.06-1.9-1.13-1-1.9-2.24-2.12-2.62-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.2-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.86-2.07-1.18-2.83-.31-.75-.62-.65-.86-.66l-.73-.01c-.25 0-.66.1-1 .47-.34.38-1.3 1.28-1.3 3.12s1.34 3.62 1.53 3.87c.19.25 2.63 4.02 6.38 5.64.89.38 1.58.61 2.12.78.89.28 1.7.24 2.34.15.71-.11 2.26-.92 2.58-1.81.32-.89.32-1.65.22-1.81-.09-.16-.34-.25-.72-.44z"/>
+  </div></div>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Voltar ao topo da página">↑</button>
+
+
+  <a class="wa-float" href="https://wa.me/5531999191545?text=Ol%C3%A1%2C%20Carlos!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento."
+     target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.11-.96-.29-1.65-.59-2.9-1.25-4.8-4.17-4.94-4.36-.15-.19-1.19-1.58-1.19-3.02s.76-2.14 1.03-2.44c.27-.29.59-.37.78-.37s.39 0 .56.01c.18.01.42-.07.66.5.24.59.83 2.03.9 2.18.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.19.73-.85.92-1.15.19-.29.39-.24.66-.15.27.1 1.7.8 1.99.95.29.15.48.22.55.34.07.12.07.7-.17 1.38z"/>
     </svg>
+    <span>Falar no WhatsApp</span>
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

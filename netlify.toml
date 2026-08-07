@@ -1,0 +1,56 @@
+# ==============================================================================
+# Guatelipe — configuração de publicação (Netlify)
+# ==============================================================================
+
+[build]
+  publish = "."
+
+# ------------------------------------------------------------------------------
+# Cabeçalhos de segurança para todo o site
+# ------------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    # HSTS: só entra em vigor depois que o domínio já serve HTTPS de forma estável.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# ------------------------------------------------------------------------------
+# Cache
+# O HTML precisa ser sempre revalidado, senão uma correção sua leva dias para
+# chegar em quem já visitou. CSS, JS e imagens são revalidados também, porque
+# este projeto não usa nome de arquivo com hash — cache longo aqui significaria
+# visitante preso numa versão antiga.
+# ------------------------------------------------------------------------------
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+# ------------------------------------------------------------------------------
+# Endereço único: sem "www" e sem barra final duplicada.
+# Evita que o Google indexe a mesma página em dois endereços.
+# ------------------------------------------------------------------------------
+[[redirects]]
+  from = "https://www.guatelipe.dev/*"
+  to = "https://guatelipe.dev/:splat"
+  status = 301
+  force = true

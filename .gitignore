@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências e build (o projeto não usa, mas evita acidentes)
+node_modules/
+dist/
+.netlify/

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada | Guatelipe</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#F1EDE4">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,8vw,90px) 0}
+    .error-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+    .error-code{margin:clamp(24px,5vw,52px) 0 0;font-family:var(--display);font-weight:900;font-size:clamp(96px,26vw,340px);line-height:.8;letter-spacing:-.06em}
+    .error-code em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--accent)}
+    .error-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);padding-top:clamp(24px,3vw,38px);margin-top:clamp(24px,4vw,44px);border-top:2px solid var(--ink)}
+    .error-body h1{font-family:var(--display);font-weight:900;font-size:clamp(24px,3.6vw,44px);line-height:1;letter-spacing:-.04em;text-transform:uppercase}
+    .error-body p{max-width:46ch;font-size:15px;line-height:1.66;color:var(--ink-soft)}
+    .error-actions{display:flex;flex-wrap:wrap;gap:12px;align-content:start}
+    @media(max-width:820px){.error-body{grid-template-columns:1fr}}
+    @media(max-width:560px){.error-actions{flex-direction:column;align-items:stretch}.error-actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="grid-rules" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <main class="error-page">
+    <div class="container">
+      <div class="error-meta">
+        <span>Erro 404</span>
+        <span>Página não encontrada</span>
+        <span>guatelipe.dev</span>
+      </div>
+
+      <p class="error-code">4<em>0</em>4</p>
+
+      <div class="error-body">
+        <div>
+          <h1>Esta página saiu de circulação.</h1>
+        </div>
+        <div>
+          <p>
+            O endereço que você acessou não existe ou foi movido. Volte para a
+            capa ou peça um orçamento — respondo pessoalmente.
+          </p>
+          <div class="error-actions" style="margin-top:28px">
+            <a href="/" class="btn btn-primary">Voltar ao início <span>↗</span></a>
+            <a href="/#orcamento" class="btn btn-ghost">Solicitar orçamento</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
