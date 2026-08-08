@@ -162,7 +162,18 @@ completar.
 - [ ] Ligar o Cloudflare Web Analytics (snippet comentado no `<head>`)
 - [ ] Enviar o `sitemap.xml` ao Google Search Console
 - [ ] Segundo projeto real no portfólio
+- [ ] Criar o Perfil da Empresa no Google — é o que faz o site aparecer no
+      bloco local e a única via para ter avaliação no Google
 - [ ] Depoimento de cliente
+
+Sobre o depoimento, para quem for implementar: ele **não** deve entrar no
+`schema.org` como `Review`. Avaliação que o próprio negócio publica sobre
+si mesmo é o que o Google chama de *self-serving review* — não gera estrela
+no resultado de busca e é explicitamente desconsiderada.
+
+E não vale imitar o formato de avaliação do Google com estrelas e logo se a
+avaliação não existir lá de verdade: o card afirma um registro público que
+qualquer pessoa pode ir conferir.
 
 ## Licença
 

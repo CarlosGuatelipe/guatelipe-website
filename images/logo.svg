@@ -1,8 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Guatelipe">
-  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="50" cy="50" r="46" stroke-width="3.5"/>
-    <g transform="translate(50 50) scale(1.55) translate(-12 -12)">
-      <path stroke-width="2.1"
+  <!--
+    Ícone da aba. Não é o logotipo do cabeçalho reduzido, é um desenho à
+    parte — e precisa ser.
+
+    O logotipo é traço fino sobre papel. A 16 pixels, traço fino desaparece
+    em qualquer cor, e era isso que fazia o ícone parecer apagado. Aqui a
+    marca vira um disco cheio com o nó vazado: a forma sólida é lida de
+    longe, o nó dá identidade quando há pixels para isso.
+
+    E ele se adapta: barra de abas clara recebe disco de tinta, barra
+    escura recebe disco de papel. Assim o contraste é sempre máximo, em vez
+    de acertar num tema e sumir no outro.
+  -->
+  <style>
+    .disco { fill: #16120E; }
+    .marca { stroke: #FBFAF7; }
+    @media (prefers-color-scheme: dark) {
+      .disco { fill: #FBFAF7; }
+      .marca { stroke: #16120E; }
+    }
+  </style>
+
+  <circle class="disco" cx="50" cy="50" r="50"/>
+
+  <g class="marca" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="translate(50 50) scale(1.9) translate(-12 -12)">
+      <path stroke-width="2.4"
             d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/>
     </g>
   </g>
