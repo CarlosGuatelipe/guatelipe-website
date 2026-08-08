@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guatelipe.netlify.app/sitemap.xml
+Sitemap: https://guatelipe.com/sitemap.xml

@@ -4,13 +4,19 @@
   "description": "Sites institucionais, landing pages, lojas virtuais e sistemas web sob medida.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#02050b",
-  "theme_color": "#02050b",
+  "background_color": "#FBFAF7",
+  "theme_color": "#FBFAF7",
   "lang": "pt-BR",
   "icons": [
     {
-      "src": "images/favicon.png",
+      "src": "images/icone-512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icone-180.png",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     }

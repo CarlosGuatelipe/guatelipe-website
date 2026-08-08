@@ -48,14 +48,24 @@
 # ------------------------------------------------------------------------------
 # Endereço único: sem "www" e sem barra final duplicada.
 # Evita que o Google indexe a mesma página em dois endereços.
-# ------------------------------------------------------------------------------
-# Enquanto o domínio próprio não existe, o endereço canônico é o do Netlify.
-# Quando guatelipe.dev entrar no ar, troque as duas linhas abaixo e reative
-# o redirecionamento de www — e lembre de atualizar canonical, og:url,
-# sitemap.xml, robots.txt e a allowlist do EmailJS junto.
 #
-# [[redirects]]
-#   from = "https://www.guatelipe.dev/*"
-#   to = "https://guatelipe.dev/:splat"
-#   status = 301
-#   force = true
+# ANTES DE PUBLICAR: estes redirecionamentos e o canonical do index.html só
+# fazem sentido depois que guatelipe.com estiver ligado ao Netlify no painel
+# (Domain management → Add domain) e o DNS já responder. Publicar com o
+# canonical apontando para um domínio que ainda não resolve manda o Google
+# indexar um endereço morto.
+# ------------------------------------------------------------------------------
+[[redirects]]
+  from = "https://www.guatelipe.com/*"
+  to = "https://guatelipe.com/:splat"
+  status = 301
+  force = true
+
+# O endereço antigo do Netlify continua existindo e responderia com o site
+# inteiro — duas cópias do mesmo conteúdo, que é exatamente o que o canonical
+# tenta evitar. Aqui ele passa a apontar para o domínio de verdade.
+[[redirects]]
+  from = "https://guatelipe.netlify.app/*"
+  to = "https://guatelipe.com/:splat"
+  status = 301
+  force = true
