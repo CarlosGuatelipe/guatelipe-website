@@ -148,15 +148,109 @@ if (backToTop) {
   porSecao.forEach((_, secao) => spy.observe(secao));
 })();
 
-/* Acordeões: mantém apenas um item aberto por grupo. */
+/* ==========================================================================
+   ACORDEÕES
+   O <details> nativo abre bem, mas fecha instantâneo — sem a transição que
+   a própria abertura já tem (o painel entra com a animação `panelIn` do
+   CSS). Fechar sem eco visual quebra a regra de que toda mudança de estado
+   se explica: o item ao lado ainda pulsando de aberto para fechado, e este
+   cortando seco, é a assimetria que se nota mesmo sem saber nomear.
+
+   Aqui os dois sentidos ganham a mesma coreografia. A altura é o único
+   valor que precisa de JavaScript — CSS não anima de/para `auto` — e por
+   isso é a Web Animations API que trata dela, não um keyframe declarado:
+   ela é interrompível, então clicar em dois itens rápido não deixa animação
+   pela metade brigando com a próxima. A opacidade e o deslocamento de
+   entrada continuam do `panelIn` do CSS, sem duplicar aqui; só o fechamento
+   precisa da própria opacidade, porque não existe keyframe de saída.
+
+   Sem prefers-reduced-motion, o acordeão volta a ser o <details> puro: abre
+   e fecha na hora, sem altura animada — o comportamento de antes desta
+   revisão, e o mais legível para quem pediu menos movimento. */
 function initAcordeao(seletor) {
   const itens = [...document.querySelectorAll(seletor)];
-  itens.forEach(item => {
-    item.addEventListener("toggle", () => {
-      if (!item.open) return;
-      itens.forEach(outro => {
-        if (outro !== item) outro.open = false;
+  if (!itens.length) return;
+
+  const animacoes = new WeakMap();
+
+  function painelDe(item) {
+    return item.querySelector(":scope > summary + *");
+  }
+
+  function animar(item, de, para, duracao) {
+    const painel = painelDe(item);
+    if (!painel) return Promise.resolve();
+
+    animacoes.get(item)?.cancel();
+
+    painel.style.overflow = "hidden";
+    const anim = painel.animate(
+      [
+        { height: `${de}px`, opacity: de === 0 ? 0 : 1 },
+        { height: `${para}px`, opacity: para === 0 ? 0 : 1 },
+      ],
+      { duration: duracao, easing: "cubic-bezier(.22,.68,.24,1)" }
+    );
+    animacoes.set(item, anim);
+
+    return anim.finished
+      .catch(() => {}) // cancelada por um clique seguinte — sem problema
+      .finally(() => {
+        if (animacoes.get(item) === anim) animacoes.delete(item);
+        painel.style.overflow = "";
+        painel.style.height = "";
+        painel.style.opacity = "";
       });
+  }
+
+  function fechar(item) {
+    if (!item.open) return Promise.resolve();
+    const painel = painelDe(item);
+    const alturaAtual = painel ? painel.getBoundingClientRect().height : 0;
+    // Sai mais rápido do que entra: fechar não precisa do mesmo peso de abrir.
+    return animar(item, alturaAtual, 0, 260).then(() => {
+      item.open = false;
+    });
+  }
+
+  function abrir(item) {
+    item.open = true; // síncrono: só assim o navegador calcula a altura real.
+    const painel = painelDe(item);
+    if (!painel) return;
+    const alturaFinal = painel.scrollHeight;
+    animar(item, 0, alturaFinal, 380);
+  }
+
+  itens.forEach(item => {
+    const summary = item.querySelector(":scope > summary");
+    if (!summary) return;
+
+    summary.addEventListener("click", event => {
+      event.preventDefault();
+
+      if (prefersReducedMotion) {
+        // O HTML não fecha os irmãos sozinho — quem fazia isso era o
+        // listener de "toggle" que existia antes desta revisão. Aqui é
+        // a versão instantânea dele: sem WAAPI, mas com o mesmo "só um
+        // aberto por grupo" que o resto do site pressupõe.
+        if (item.open) {
+          item.open = false;
+        } else {
+          itens.forEach(outro => { if (outro !== item) outro.open = false; });
+          item.open = true;
+        }
+        return;
+      }
+
+      if (item.open) {
+        fechar(item);
+        return;
+      }
+
+      itens
+        .filter(outro => outro !== item && outro.open)
+        .forEach(fechar);
+      abrir(item);
     });
   });
 }
@@ -299,7 +393,7 @@ if (footerYear) footerYear.textContent = new Date().getFullYear();
 
     try {
       await navigator.clipboard.writeText(email);
-      showToast(`✨ E-mail copiado! <span>(${email})</span>`);
+      showToast(`E-mail copiado! <span>(${email})</span>`);
     } catch (error) {
       window.location.href = emailLink.getAttribute("href");
     }

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-08T00:00:00Z",
+  "title": "Design System: Guatelipe Web Development",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Laranja-Tinta",
+        "canonical": "#C2371C",
+        "tonalRamp": ["#43130A", "#762111", "#A93018", "#DC3E20", "#E66850", "#ED9483", "#F4C0B6", "#FCECE9"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel Cru",
+        "canonical": "#FBFAF7",
+        "tonalRamp": ["#332D1A", "#5A4F2D", "#817140", "#A89354", "#BCAC79", "#D0C4A0", "#E3DCC7", "#F6F4EE"]
+      },
+      "paper-3": {
+        "role": "neutral",
+        "displayName": "Papel Cru Sombreado",
+        "canonical": "#EAE7DD",
+        "tonalRamp": ["#2F2B1D", "#534C33", "#776D4A", "#9B8E60", "#B2A883", "#C9C1A7", "#DFDACB", "#F5F4EF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Preto Tipográfico",
+        "canonical": "#16120E",
+        "tonalRamp": ["#2F261E", "#524334", "#76614B", "#9A7E62", "#B19B85", "#C8B8A8", "#DED5CC", "#F5F2EF"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Tinta Suave",
+        "canonical": "#544C40",
+        "tonalRamp": ["#2B2721", "#4C453A", "#6E6353", "#8F816D", "#A89E8D", "#C2BAAE", "#DBD6CF", "#F4F3F1"]
+      },
+      "ink-mute": {
+        "role": "neutral",
+        "displayName": "Tinta Apagada",
+        "canonical": "#6E6656",
+        "tonalRamp": ["#2B2822", "#4C463B", "#6C6455", "#8D836E", "#A79F8F", "#C1BBAF", "#DAD7D0", "#F4F3F1"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Manchete da capa. Uma por página, caixa alta, entreletra negativa." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de seção, limitados a 19ch para forçar quebra curta." },
+      "title": { "displayName": "Title", "purpose": "Nome de serviço, de projeto e de etapa." },
+      "quote": { "displayName": "Quote", "purpose": "A voz do que não é afirmação própria: citação, ênfase, abertura do Sobre." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos e listas em Tinta Suave, com largura máxima de 44ch em texto de apoio." },
+      "label": { "displayName": "Label", "purpose": "Dado técnico: números de seção, metadados, navegação e rótulos de botão." }
+    },
+    "shadows": [
+      { "name": "offset-button", "value": "6px 6px 0 #16120E", "purpose": "Hover de botão, junto de translate(-3px,-3px). Sem desfoque." },
+      { "name": "offset-plate", "value": "10px 10px 0 #16120E", "purpose": "Hover de cartão de projeto, com translate(-5px,-5px)." },
+      { "name": "offset-inverse", "value": "8px 8px 0 #FBFAF7", "purpose": "O mesmo gesto dentro de seções invertidas." },
+      { "name": "header-lift", "value": "0 14px 34px -22px rgba(92,58,30,.55)", "purpose": "Única sombra desfocada do sistema, e mesmo assim marrom. Só o cabeçalho após a rolagem." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.22,.68,.24,1)", "purpose": "Curva única do sistema. Toda transição usa esta." },
+      { "name": "duration-state", "value": "0.22s", "purpose": "Troca de estado imediata: botões e marcadores." },
+      { "name": "duration-surface", "value": "0.45s", "purpose": "Movimento de superfície: cabeçalho encolhendo, painel abrindo." },
+      { "name": "duration-reveal", "value": "1.15s", "purpose": "Entrada de bloco na rolagem, com clip-path e translateY." }
+    ],
+    "breakpoints": [
+      { "name": "rail", "value": "1620px" },
+      { "name": "lg", "value": "1180px" },
+      { "name": "md", "value": "900px" },
+      { "name": "nav", "value": "820px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "xs", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão primário",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal. Preciso e contido: o movimento é sinal de estado, não convite.",
+      "html": "<button class=\"ds-btn-primary\">Solicitar orçamento <span aria-hidden=\"true\">↗</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: #16120E; color: #FBFAF7; border: 1px solid #16120E; border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: transform .22s cubic-bezier(.22,.68,.24,1), box-shadow .22s cubic-bezier(.22,.68,.24,1), background .22s cubic-bezier(.22,.68,.24,1), border-color .22s cubic-bezier(.22,.68,.24,1); } .ds-btn-primary:hover { background: #C2371C; border-color: #C2371C; transform: translate(-3px,-3px); box-shadow: 6px 6px 0 #16120E; } .ds-btn-primary:focus-visible { outline: 2px solid #C2371C; outline-offset: 3px; } .ds-btn-primary:active { transform: translate(0,0); box-shadow: none; }"
+    },
+    {
+      "name": "Botão fantasma",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ação secundária. Mesmo deslocamento, sem troca de cor.",
+      "html": "<button class=\"ds-btn-ghost\">Ver portfólio</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; background: transparent; color: #16120E; border: 1px solid #16120E; border-radius: 999px; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: transform .22s cubic-bezier(.22,.68,.24,1), box-shadow .22s cubic-bezier(.22,.68,.24,1); } .ds-btn-ghost:hover { transform: translate(-3px,-3px); box-shadow: 6px 6px 0 #16120E; } .ds-btn-ghost:focus-visible { outline: 2px solid #C2371C; outline-offset: 3px; } .ds-btn-ghost:active { transform: translate(0,0); box-shadow: none; }"
+    },
+    {
+      "name": "Rótulo monoespaçado",
+      "kind": "chip",
+      "refersTo": "label",
+      "description": "A unidade de informação técnica do layout: número de seção, metadado, estado.",
+      "html": "<p class=\"ds-kicker\"><span>01</span> Serviços</p>",
+      "css": ".ds-kicker { position: relative; display: flex; align-items: center; gap: 12px; margin: 0; padding-bottom: 14px; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #16120E; } .ds-kicker span { color: #C2371C; } .ds-kicker::after { content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #16120E; }"
+    },
+    {
+      "name": "Prancha de projeto",
+      "kind": "card",
+      "refersTo": "plate",
+      "description": "Moldura com marcas de corte nos quatro cantos e metadados monoespaçados. As marcas se aproximam no hover.",
+      "html": "<article class=\"ds-plate\"><span class=\"ds-plate-marks\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i></span><span class=\"ds-plate-meta\"><span>exemplo.com</span><span>N.º 001</span></span><span class=\"ds-plate-body\">Prancha</span><span class=\"ds-plate-foot\"><span>Landing page · Conversão</span><span>2026</span></span></article>",
+      "css": ".ds-plate { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; min-height: 220px; padding: 24px; background: #F7EEE5; color: #16120E; border: 1px solid #16120E; border-radius: 22px; overflow: hidden; transition: transform .32s cubic-bezier(.22,.68,.24,1), box-shadow .32s cubic-bezier(.22,.68,.24,1); } .ds-plate:hover { transform: translate(-5px,-5px); box-shadow: 10px 10px 0 #16120E; } .ds-plate-marks i { position: absolute; width: 15px; height: 15px; opacity: .42; transition: opacity .4s cubic-bezier(.22,.68,.24,1), inset .5s cubic-bezier(.22,.68,.24,1); } .ds-plate-marks i:nth-child(1) { inset: 16px auto auto 16px; border-top: 1px solid; border-left: 1px solid; border-top-left-radius: 10px; } .ds-plate-marks i:nth-child(2) { inset: 16px 16px auto auto; border-top: 1px solid; border-right: 1px solid; border-top-right-radius: 10px; } .ds-plate-marks i:nth-child(3) { inset: auto auto 16px 16px; border-bottom: 1px solid; border-left: 1px solid; border-bottom-left-radius: 10px; } .ds-plate-marks i:nth-child(4) { inset: auto 16px 16px auto; border-bottom: 1px solid; border-right: 1px solid; border-bottom-right-radius: 10px; } .ds-plate:hover .ds-plate-marks i { opacity: 1; inset-block: 7px; } .ds-plate-meta, .ds-plate-foot { display: flex; justify-content: space-between; gap: 14px; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; opacity: .6; } .ds-plate-foot { border-top: 1px solid currentColor; padding-top: 12px; } .ds-plate-body { font-family: Archivo, 'Arial Black', sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -.03em; }"
+    },
+    {
+      "name": "Verbete expansível",
+      "kind": "custom",
+      "refersTo": "service-item",
+      "description": "O componente-assinatura. Serviços não são cartões: são entradas de um índice que invertem para tinta ao abrir.",
+      "html": "<details class=\"ds-entry\"><summary><span class=\"ds-entry-num\">01</span><h3>Sites institucionais</h3><span class=\"ds-entry-term\">2 a 4 semanas</span><span class=\"ds-entry-mark\" aria-hidden=\"true\"></span></summary><div class=\"ds-entry-panel\">O que está incluso</div></details>",
+      "css": ".ds-entry { border-top: 1px solid rgba(62,44,26,.15); border-bottom: 1px solid rgba(62,44,26,.15); } .ds-entry summary { display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 24px; padding: 24px 16px; cursor: pointer; list-style: none; border-radius: 16px; transition: background .3s cubic-bezier(.22,.68,.24,1), color .3s cubic-bezier(.22,.68,.24,1), padding-left .3s cubic-bezier(.22,.68,.24,1); } .ds-entry summary::-webkit-details-marker { display: none; } .ds-entry-num { font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 11px; color: #C2371C; } .ds-entry h3 { margin: 0; font-family: Archivo, 'Arial Black', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.02; letter-spacing: -.03em; } .ds-entry-term { font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: #8A8271; white-space: nowrap; } .ds-entry-mark { position: relative; width: 30px; height: 30px; border: 1px solid currentColor; border-radius: 50%; transition: transform .32s cubic-bezier(.22,.68,.24,1), background .3s, color .3s; } .ds-entry-mark::before, .ds-entry-mark::after { content: ''; position: absolute; top: 50%; left: 50%; background: currentColor; transform: translate(-50%,-50%); } .ds-entry-mark::before { width: 11px; height: 1px; } .ds-entry-mark::after { width: 1px; height: 11px; transition: opacity .32s; } .ds-entry summary:hover, .ds-entry[open] summary { background: #16120E; color: #FBFAF7; padding-left: 28px; } .ds-entry summary:hover .ds-entry-num, .ds-entry[open] .ds-entry-num { color: #FBFAF7; } .ds-entry summary:hover .ds-entry-mark, .ds-entry[open] .ds-entry-mark { background: #C2371C; border-color: #C2371C; color: #FBFAF7; } .ds-entry[open] .ds-entry-mark { transform: rotate(90deg); } .ds-entry[open] .ds-entry-mark::after { opacity: 0; } .ds-entry-panel { padding: 28px 16px 34px; background: rgba(234,231,221,.9); border-radius: 16px; font-family: Archivo, sans-serif; font-size: 14px; color: #544C40; }"
+    },
+    {
+      "name": "Etiqueta de estado",
+      "kind": "chip",
+      "refersTo": "sticker",
+      "description": "Pílula com ponto pulsante para status ao vivo, como \"aceitando projetos\".",
+      "html": "<span class=\"ds-sticker\">Aceitando projetos para 2026</span>",
+      "css": ".ds-sticker { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid #16120E; border-radius: 999px; box-shadow: 3px 3px 0 #C2371C; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #16120E; } .ds-sticker::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #C2371C; animation: ds-pulse 2.6s ease-in-out infinite; } @keyframes ds-pulse { 0%, 100% { opacity: 1 } 50% { opacity: .22 } }"
+    },
+    {
+      "name": "Índice de projetos",
+      "kind": "custom",
+      "refersTo": "work-index",
+      "description": "Tabela apertada no formato de sumário de revista. Densidade alta de propósito, contra o ar generoso das seções.",
+      "html": "<table class=\"ds-index\"><thead><tr><th>N.º</th><th>Cliente</th><th>Disciplina</th><th>Ano</th><th>Situação</th></tr></thead><tbody><tr><td>001</td><td>Caroline Scarabelli</td><td>Landing page · Fisioterapia</td><td>2026</td><td>No ar</td></tr><tr class=\"ds-index-open\"><td>002</td><td>Vaga aberta</td><td>A definir</td><td>2026</td><td>Disponível</td></tr></tbody></table>",
+      "css": ".ds-index { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; color: #16120E; } .ds-index th { padding: 0 14px 10px 0; text-align: left; font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace; font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: #8A8271; border-bottom: 1px solid rgba(62,44,26,.15); } .ds-index td { padding: 14px 14px 14px 0; border-bottom: 1px solid rgba(62,44,26,.07); } .ds-index-open td { color: #8A8271; } .ds-index-open td:last-child { color: #C2371C; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Prova de Impressão",
+    "overview": "Este sistema não imita papel — ele se comporta como uma folha antes de ir para a gráfica. As pranchas do portfólio têm marcas de corte nos cantos, os projetos são numerados como matérias de uma edição, o índice lateral é um sumário, e o fundo é fibra de papel-algodão fotografada, não ruído gerado. A prova gráfica é o estado em que o trabalho ainda se deixa examinar: por isso o sistema mostra a régua em vez de escondê-la.\n\nA densidade é editorial, não de aplicativo. A hierarquia vem do tamanho do tipo, dos fios e da quantidade de informação por bloco — nunca de caixas coloridas ou ícones. Há muito ar entre seções (até 168px) e muito pouco dentro de uma linha de dados: uma tabela de projetos é apertada de propósito, como índice de revista.\n\nO sistema recusa terminantemente dois mundos: portfólio dark neon e cara de construtor visual — este último porque contradiz a única afirmação que o produto faz sobre si. O código também já rejeita gradiente, brilho e vidro; isso é invariante observado na implementação, não preferência a revisar.",
+    "keyCharacteristics": [
+      "Papel quente e tinta quase preta; um único acento, usado com parcimônia",
+      "Três vozes tipográficas com papéis fixos: grotesco pesado, serifa itálica, monoespaçado",
+      "Sombra dura sem desfoque — nunca borrão",
+      "Fios de 1px no lugar de bordas de caixa",
+      "Textura de papel real cobrindo a página inteira em multiply",
+      "Marcas de corte, numeração e sumário como vocabulário recorrente"
+    ],
+    "rules": [
+      { "name": "A Regra do Acento Único", "body": "Existe um acento e ele é #C2371C. Nenhuma tela pode introduzir uma segunda cor de destaque — nem verde de sucesso, nem vermelho de erro, nem azul de link. Estado se comunica por peso, posição e fio, não por nova cor.", "section": "colors" },
+      { "name": "A Regra da Tinta Quente", "body": "Nenhum cinza neutro e nenhum preto puro. Todo neutro carrega marrom. #000, #333 e #666 estão proibidos: quebram a temperatura da página inteira, e o erro só aparece quando já está tudo montado.", "section": "colors" },
+      { "name": "A Regra das Três Vozes", "body": "Grotesco afirma, serifa cita, monoespaçado informa. Um dado técnico nunca sai em Archivo; uma manchete nunca sai em mono. Trocar as vozes destrói a hierarquia mais rápido que qualquer erro de tamanho.", "section": "typography" },
+      { "name": "A Regra do Algarismo Alinhado", "body": "Toda coluna de números — tabela de projetos, contadores, prazos, ficha técnica — usa font-variant-numeric: tabular-nums. Número que dança entre linhas denuncia amadorismo.", "section": "typography" },
+      { "name": "A Regra da Quebra Ótica", "body": "Títulos levam text-wrap: balance; parágrafos levam text-wrap: pretty. Exceção documentada: dentro de um balão ou caixa estreita, pretty deixa faixa vazia e deve virar wrap.", "section": "typography" },
+      { "name": "A Regra do Fora de Registro", "body": "Sombra existe, mas nunca borrada. O deslocamento imita chapa de cor desalinhada numa prova gráfica: mesmo formato, mesma nitidez, posição trocada. blur maior que zero está proibido em qualquer elemento que não seja o cabeçalho.", "section": "elevation" },
+      { "name": "A Regra da Sombra Quente", "body": "Nenhuma sombra é preta ou cinza neutra. Preto em multiply rouba a saturação do papel e devolve cinza — o marrom preserva a temperatura.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar o acento como marcação — número, fio, ponto, preenchimento de hover. Se ele cobrir mais que uma fração da tela, está errado.",
+      "Do manter todo neutro na família marrom. Tinta é #16120E, nunca #000.",
+      "Do separar blocos com fio de 1px e ar, antes de pensar em caixa.",
+      "Do aplicar tabular-nums em qualquer coluna de números.",
+      "Do dar aos títulos text-wrap: balance e aos parágrafos text-wrap: pretty.",
+      "Do respeitar prefers-reduced-motion em toda animação nova, e @media(hover:none) em todo efeito que desloca elemento.",
+      "Do usar as três vozes nos seus papéis: grotesco afirma, serifa cita, mono informa."
+    ],
+    "donts": [
+      "Don't usar gradiente, brilho ou vidro. Está escrito no topo do CSS e é invariante da implementação.",
+      "Don't usar sombra desfocada em nada além do cabeçalho. Deslocamento sólido é a linguagem; blur positivo quebra a Regra do Fora de Registro.",
+      "Don't usar sombra preta ou cinza neutra — sempre marrom.",
+      "Don't introduzir uma segunda cor de destaque, inclusive verde de sucesso e vermelho de erro.",
+      "Don't empilhar seções idênticas com ícone colorido em círculo e foto de banco de imagens. É a cara de construtor visual que o produto nega.",
+      "Don't levar o sistema para fundo escuro com brilho ou neon.",
+      "Don't reintroduzir cantos vivos: foram testados e reprovados.",
+      "Don't escrever texto técnico em Archivo nem manchete em mono."
+    ]
+  }
+}

@@ -126,10 +126,15 @@ quase branco.
 No topo do `css/style.css`:
 
 ```css
---nevoa:   .3;   /* densidade da bruma que atravessa a página */
 --vinheta: .14;  /* escurecimento das bordas da janela */
 --grao:    .55;  /* aspereza da fibra do papel */
 ```
+
+Existiu também `--nevoa`, controlando duas manchas animadas com desfoque
+atrás da página. Removida numa revisão de crítica de design: contradizia a
+própria regra que o topo deste arquivo CSS declara — "sem gradiente, sem
+brilho, sem vidro" — desde que foi escrita. Ver `DESIGN.md`, "Regra do
+Acento Único" e "Regra da Sombra Quente", para o raciocínio completo.
 
 ## Publicação
 
