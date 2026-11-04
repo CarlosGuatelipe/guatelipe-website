@@ -98,9 +98,9 @@ delegado ao Netlify. Deploy no Netlify a partir de
 - **Voz:** primeira pessoa, direta, sem jargão e sem promessa de vendedor.
   Admite o que não sabe — o próprio site responde "depende do que você
   precisa" sobre preço, em vez de fingir tabela.
-- **Ativos existentes:** marca (nó em círculo, em SVG e PNG), retrato real
-  fotografado, e a linguagem editorial de papel/tinta/acento documentada no
-  README. Tipografia: Archivo, Instrument Serif, JetBrains Mono.
+- **Ativos existentes:** marca (nó em círculo, em SVG e PNG), pranchas de
+  estúdio em papel-algodão, e a linguagem editorial de papel/tinta/acento
+  documentada no README. Tipografia: Archivo, Instrument Serif, JetBrains Mono.
 - **Acessibilidade implementada no código** (observado no repositório, não
   declarado pelo cliente como padrão a cumprir): link de pular para o
   conteúdo, foco visível, respeito a `prefers-reduced-motion`, rótulos ARIA

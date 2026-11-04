@@ -37,7 +37,7 @@ robots.txt          · sitemap.xml · site.webmanifest
 | `abertura.jpg` | prancha de abertura da capa, 2400×1020 |
 | `projeto-caroline.jpg` | o site da cliente num notebook |
 | `projeto-caroline-mobile.jpg` | o mesmo site num celular |
-| `carlos-guatelipe.jpg` | retrato, 704×880 — fotografia real, não gerada |
+| `oficio-editorial.jpg` | prancha de estúdio da seção Sobre, 880×1100 — arquitetura e código |
 | `servico-*.jpg` | uma natureza-morta por tipo de projeto |
 | `papel.png` | ladrilho de fibra de papel, 400×400 |
 | `icone-512.png` · `icone-180.png` | marca em PNG, para o manifesto e o iOS |
@@ -182,5 +182,5 @@ qualquer pessoa pode ir conferir.
 
 ## Licença
 
-Código aberto para consulta. A marca, os textos, o retrato e as capturas de
+Código aberto para consulta. A marca, os textos, as pranchas visuais e as capturas de
 projeto não são livres para reuso.
