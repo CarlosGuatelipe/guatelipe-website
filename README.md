@@ -160,14 +160,14 @@ completar.
 
 ## Pendências
 
-- [ ] **Ligar `guatelipe.com` ao Netlify** (Domain management → Add domain) e
+- [x] **Ligar `guatelipe.com` ao Netlify** (Domain management → Add domain) e
       esperar o DNS responder. Os endereços canônicos do site já apontam para
       esse domínio: publicar antes disso manda o Google indexar um endereço
       que ainda não existe.
 - [ ] Ligar o Cloudflare Web Analytics (snippet comentado no `<head>`)
-- [ ] Enviar o `sitemap.xml` ao Google Search Console
+- [x] Enviar o `sitemap.xml` ao Google Search Console
 - [ ] Segundo projeto real no portfólio
-- [ ] Criar o Perfil da Empresa no Google — é o que faz o site aparecer no
+- [x] Criar o Perfil da Empresa no Google — é o que faz o site aparecer no
       bloco local e a única via para ter avaliação no Google
 - [ ] Depoimento de cliente
 
